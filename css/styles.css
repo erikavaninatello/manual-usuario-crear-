@@ -15,11 +15,17 @@
 * { box-sizing: border-box; margin:0; padding:0; }
 
 body {
-  font-family: 'Inter', -apple-system, 'SF Pro Display', Arial, sans-serif;
+  font-family: 'Poppins', -apple-system, 'SF Pro Display', Arial, sans-serif;
   background: var(--bg);
   color: var(--text-p);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Títulos: Inter, como en el front */
+.brand-wordmark, .cover-wordmark, h1.page-title, h2.subhead,
+.cover h1, .role-card h3, .nav-section-label, .faq-q {
+  font-family: 'Inter', -apple-system, 'SF Pro Display', Arial, sans-serif;
 }
 
 a { color: var(--cta); text-decoration:none; }
