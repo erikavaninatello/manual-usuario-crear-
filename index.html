@@ -6,46 +6,100 @@
 <title>Manual de Usuario — CREAR</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div id="sidebar">
+<svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="icon-house" viewBox="0 0 24 24"><path d="m3.5 10 8.5-7 8.5 7v10a1.5 1.5 0 0 1-1.5 1.5h-14A1.5 1.5 0 0 1 3.5 20z"/><path d="M9 21v-7h6v7"/></symbol>
+  <symbol id="icon-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22z"/><path d="M4 5.5v14A2.5 2.5 0 0 1 6.5 17H20M8 7h8m-8 4h6"/></symbol>
+  <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M3 21h18M6 18v-6h4v6m2 0V7h4v11m2 0V3h4v15"/></symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 21v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V21"/><circle cx="9" cy="8" r="3.5"/><path d="M17 11a3.5 3.5 0 1 0-1.2-6.8M16 15.5h2a4 4 0 0 1 4 4V21"/></symbol>
+  <symbol id="icon-id" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2.5"/><path d="M5.5 17a3.5 3.5 0 0 1 7 0m2-6h3m-3 3h3"/></symbol>
+  <symbol id="icon-teacher" viewBox="0 0 24 24"><path d="M3 4h13v10H3zM7 20l2-6m3 6-2-6m8-4h3v8h-5"/><circle cx="18" cy="5" r="2"/><path d="M17 8h2a2 2 0 0 1 2 2"/></symbol>
+  <symbol id="icon-calendar-off" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18m-13 4h3m-3 3h7"/></symbol>
+  <symbol id="icon-dance" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2"/><path d="m11 8-3 4 4 2 2 7m-3-9 5-2 4 3m-9 3-4 6m5-11 3 2"/></symbol>
+  <symbol id="icon-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2Zm0 7h6m-6 4h6m-6 3h4"/></symbol>
+  <symbol id="icon-checklist" viewBox="0 0 24 24"><path d="m3 6 1.5 1.5L7 5m-4 7 1.5 1.5L7 11m-4 7 1.5 1.5L7 17m4-11h10m-10 6h10m-10 6h10"/></symbol>
+  <symbol id="icon-wallet" viewBox="0 0 24 24"><path d="M4 6.5h15a2 2 0 0 1 2 2V19H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14"/><path d="M16 11h5v4h-5a2 2 0 0 1 0-4Zm1 2h.01"/></symbol>
+  <symbol id="icon-money" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 9a3 3 0 0 0-2 2m14 4a3 3 0 0 0 2-2"/></symbol>
+  <symbol id="icon-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8 14-1 8 5-3 5 3-1-8"/><path d="m10 9 1.3 1.3L14 7.5"/></symbol>
+  <symbol id="icon-mask" viewBox="0 0 24 24"><path d="M4 5c5-2 11-2 16 0v7c0 4-3.5 7-8 9-4.5-2-8-5-8-9z"/><path d="M8 10h.01M16 10h.01M9 15c2 1 4 1 6 0"/></symbol>
+  <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18m-13 4h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></symbol>
+  <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></symbol>
+  <symbol id="icon-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.6a8 8 0 0 1-1.8 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.8-1l-1.7.6-1.4-2.4 1.4-1.1a7 7 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.6a8 8 0 0 1 1.8-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.8 1l1.7-.6 1.4 2.4-1.4 1.1a7 7 0 0 1 0 2Z" transform="translate(-1 -1) scale(1.08)"/></symbol>
+  <symbol id="icon-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.4 1.6c-1.1 1.2-2 1.5-2 3.4m0 3h.01"/></symbol>
+  <symbol id="icon-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></symbol>
+</svg>
+<aside id="sidebar" aria-label="Navegación del manual">
   <div class="brand">
-    <div class="brand-wordmark">CREAR</div>
-    <div><div class="brand-sub">Manual de Usuario</div></div>
+    <div class="brand-identity">
+      <span class="brand-logo" role="img" aria-label="CREAR — Academia de Danzas">
+        <img class="brand-logo-light" src="assets/images/logo-horizontal.webp" alt="">
+        <img class="brand-logo-dark" src="assets/images/logo-horizontal-blanco.webp" alt="">
+      </span>
+      <span class="brand-sub">Manual de Usuario</span>
+    </div>
+    <button class="mobile-nav-toggle" id="mobileNavToggle" type="button" aria-expanded="false" aria-controls="manualNavigation" aria-label="Abrir menú">
+      <svg class="menu-open-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="menu-close-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    </button>
   </div>
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Buscar en el manual...">
-  </div>
-  <div class="nav-item active" data-section="portada" onclick="showSection('portada')"> Inicio</div>
+  <nav class="navigation" id="manualNavigation">
+  <div class="nav-item active" data-section="portada" onclick="showSection('portada')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-house"></use></svg><span>Inicio</span></div>
   <div class="nav-section-label">General</div>
-  <div class="nav-item" data-section="inicio-nav" onclick="showSection('inicio-nav')">Cómo empezar</div>
-  <div class="nav-item" data-section="dashboard" onclick="showSection('dashboard')">El Panel de Inicio</div>
+  <div class="nav-item" data-section="inicio-nav" onclick="showSection('inicio-nav')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-book"></use></svg><span>Cómo empezar</span></div>
+  <div class="nav-item" data-section="dashboard" onclick="showSection('dashboard')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-chart"></use></svg><span>El Panel de Inicio</span></div>
   <div class="nav-section-label">Alumnas</div>
-  <div class="nav-item" data-section="alumnos" onclick="showSection('alumnos')">Gestión de Alumnas</div>
-  <div class="nav-item" data-section="ficha-medica" onclick="showSection('ficha-medica')">Ficha Médica</div>
+  <div class="nav-item" data-section="alumnos" onclick="showSection('alumnos')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-users"></use></svg><span>Gestión de Alumnas</span></div>
+  <div class="nav-item" data-section="ficha-medica" onclick="showSection('ficha-medica')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-id"></use></svg><span>Ficha Médica</span></div>
   <div class="nav-section-label">Docentes</div>
-  <div class="nav-item" data-section="profesores" onclick="showSection('profesores')">Profesores</div>
-  <div class="nav-item" data-section="licencias" onclick="showSection('licencias')">Licencias y Suplencias</div>
+  <div class="nav-item" data-section="profesores" onclick="showSection('profesores')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-teacher"></use></svg><span>Profesores</span></div>
+  <div class="nav-item" data-section="licencias" onclick="showSection('licencias')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-calendar-off"></use></svg><span>Licencias y Suplencias</span></div>
   <div class="nav-section-label">Academia</div>
-  <div class="nav-item" data-section="clases" onclick="showSection('clases')">Clases y Comisiones</div>
-  <div class="nav-item" data-section="inscripciones" onclick="showSection('inscripciones')">Inscripciones</div>
-  <div class="nav-item" data-section="asistencia" onclick="showSection('asistencia')">Asistencia</div>
+  <div class="nav-item" data-section="clases" onclick="showSection('clases')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-dance"></use></svg><span>Clases y Comisiones</span></div>
+  <div class="nav-item" data-section="inscripciones" onclick="showSection('inscripciones')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-clipboard"></use></svg><span>Inscripciones</span></div>
+  <div class="nav-item" data-section="asistencia" onclick="showSection('asistencia')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-checklist"></use></svg><span>Asistencia</span></div>
   <div class="nav-section-label">Administración</div>
-  <div class="nav-item" data-section="pagos" onclick="showSection('pagos')">Pagos y Cuotas</div>
-  <div class="nav-item" data-section="sueldos" onclick="showSection('sueldos')">Sueldos</div>
-  <div class="nav-item" data-section="evaluaciones" onclick="showSection('evaluaciones')">Evaluaciones</div>
+  <div class="nav-item" data-section="pagos" onclick="showSection('pagos')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-wallet"></use></svg><span>Pagos y Cuotas</span></div>
+  <div class="nav-item" data-section="sueldos" onclick="showSection('sueldos')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-money"></use></svg><span>Sueldos</span></div>
+  <div class="nav-item" data-section="evaluaciones" onclick="showSection('evaluaciones')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-medal"></use></svg><span>Evaluaciones</span></div>
   <div class="nav-section-label">Organización</div>
-  <div class="nav-item" data-section="eventos" onclick="showSection('eventos')">Eventos</div>
-  <div class="nav-item" data-section="calendario" onclick="showSection('calendario')">Calendario</div>
-  <div class="nav-item" data-section="reportes" onclick="showSection('reportes')">Reportes</div>
-  <div class="nav-item" data-section="notificaciones" onclick="showSection('notificaciones')">Notificaciones</div>
+  <div class="nav-item" data-section="eventos" onclick="showSection('eventos')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-mask"></use></svg><span>Eventos</span></div>
+  <div class="nav-item" data-section="calendario" onclick="showSection('calendario')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span>Calendario</span></div>
+  <div class="nav-item" data-section="reportes" onclick="showSection('reportes')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-chart"></use></svg><span>Reportes</span></div>
+  <div class="nav-item" data-section="notificaciones" onclick="showSection('notificaciones')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-bell"></use></svg><span>Notificaciones</span></div>
   <div class="nav-section-label">Sistema</div>
-  <div class="nav-item" data-section="configuracion" onclick="showSection('configuracion')">Configuración</div>
-  <div class="nav-item" data-section="faq" onclick="showSection('faq')">Preguntas Frecuentes</div>
-</div>
-<div id="main">
+  <div class="nav-item" data-section="configuracion" onclick="showSection('configuracion')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-settings"></use></svg><span>Configuración</span></div>
+  <div class="nav-item" data-section="faq" onclick="showSection('faq')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-help"></use></svg><span>Preguntas Frecuentes</span></div>
+  </nav>
+</aside>
+<main id="main">
+<header class="topbar">
+  <div class="topbar-actions">
+    <span class="mobile-brand-logo" role="img" aria-label="CREAR — Academia de Danzas">
+      <img class="brand-logo-light" src="assets/images/logo-horizontal.webp" alt="">
+      <img class="brand-logo-dark" src="assets/images/logo-horizontal-blanco.webp" alt="">
+    </span>
+    <label class="search-box" for="searchInput">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.3 4.3"></path></svg>
+      <input type="search" id="searchInput" placeholder="Buscar en el manual..." autocomplete="off">
+      <span class="search-hint" aria-hidden="true">/</span>
+    </label>
+    <button class="notification-link" type="button" onclick="showSection('notificaciones')" aria-label="Ver la guía de notificaciones" title="Notificaciones">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg>
+    </button>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false">
+      <svg class="toggle-icon sun-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+      <span class="toggle-track"><span class="toggle-thumb"></span></span>
+      <svg class="toggle-icon moon-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z"></path></svg>
+    </button>
+    <div class="user-chip" aria-label="Equipo de la academia CREAR">
+      <span class="user-avatar" aria-hidden="true">CR</span><span class="user-label"><strong>Equipo CREAR</strong><small>Academia</small></span>
+    </div>
+    <button class="primary-action" type="button" onclick="showSection('inscripciones')" title="Abrir la guía para crear una inscripción">Nueva inscripción</button>
+  </div>
+</header>
 <div class="section active" id="sec-portada">
 <div class="cover">
   <div class="cover-wordmark">CREAR</div>
@@ -381,6 +435,24 @@
 <div class="faq-item"><div class="faq-q">¿Cómo cambio mi contraseña?</div><div class="faq-a">Desde el ícono de tu usuario abajo del menú lateral. Si la perdiste, pedile a la Directora que te la restablezca desde Configuración — te va a llegar un enlace de invitación nuevo, de un solo uso, para elegir una contraseña distinta.</div></div>
 <div class="faq-item"><div class="faq-q">¿Qué significa el candado en Sueldos?</div><div class="faq-a">Indica que esa acción está bloqueada para tu rol — solo la Directora puede aprobar liquidaciones de sueldo.</div></div>
 </div>
-</div><script src="js/script.js"></script>
+<div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
+<nav class="mobile-tabbar" aria-label="Navegación rápida">
+  <button class="mobile-tab active" type="button" data-mobile-section="portada" aria-current="page">
+    <svg aria-hidden="true"><use href="#icon-house"></use></svg><span>Inicio</span>
+  </button>
+  <button class="mobile-tab" type="button" data-mobile-section="asistencia">
+    <svg aria-hidden="true"><use href="#icon-checklist"></use></svg><span>Asistencia</span>
+  </button>
+  <button class="mobile-tab" type="button" data-mobile-section="pagos">
+    <svg aria-hidden="true"><use href="#icon-wallet"></use></svg><span>Pagos</span>
+  </button>
+  <button class="mobile-tab" type="button" data-mobile-section="alumnos">
+    <svg aria-hidden="true"><use href="#icon-users"></use></svg><span>Estudiantes</span>
+  </button>
+  <button class="mobile-tab" id="mobileMoreTab" type="button" aria-expanded="false" aria-controls="sidebar">
+    <svg aria-hidden="true"><use href="#icon-more"></use></svg><span>Más</span>
+  </button>
+</nav>
+</main><script src="js/script.js"></script>
 </body>
 </html>
