@@ -102,7 +102,10 @@
 </header>
 <div class="section active" id="sec-portada">
 <div class="cover">
-  <div class="cover-wordmark">CREAR</div>
+  <span class="cover-logo" role="img" aria-label="CREAR — Academia de Danzas">
+    <img class="brand-logo-light" src="assets/images/logo-horizontal.webp" alt="">
+    <img class="brand-logo-dark" src="assets/images/logo-horizontal-blanco.webp" alt="">
+  </span>
   <h1>Manual de Usuario</h1>
   <p>Sistema de Gestión Académica CREAR — Academia de Danzas</p>
 </div>
@@ -125,7 +128,7 @@
 </div>
 <div class="callout callout-info">
       <div class="callout-title">Cómo usar este manual</div>
-      <div class="callout-body">Elegí una sección del menú de la izquierda, o buscá una palabra clave arriba del todo. Cada pantalla real del sistema tiene su captura correspondiente para que puedas guiarte visualmente.</div>
+      <div class="callout-body">Elegí una sección del menú de la izquierda, o buscá una palabra clave arriba del todo. Los recorridos en video muestran el sistema actual: en computadora vas a ver la versión de escritorio y en el celular, la vista adaptada a esa pantalla.</div>
     </div>
 </div>
 <div class="section" id="sec-inicio-nav">
@@ -138,22 +141,33 @@
 <li>Ingresá tu <strong>email</strong> (el que usás en la academia) y tu <strong>contraseña</strong>.</li>
 <li>Tocá <strong>Iniciar sesión</strong>.</li>
 <li>Si olvidaste tu contraseña, tocá <em>¿Olvidaste tu contraseña?</em> y seguí las instrucciones que llegan a tu email.</li></ol>
-<figure class="shot">
-      <img src="assets/images/login.jpg" alt="Pantalla de inicio de sesión" loading="lazy">
+<figure class="shot" data-demo-clip="login">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Inicio de sesión"></video>
       <figcaption>Pantalla de Login</figcaption>
     </figure>
 <div class="callout callout-tip">
       <div class="callout-title">Primera vez</div>
       <div class="callout-body">Si es tu primer ingreso, la Directora ya te dio de alta desde Configuración — te llegó (o te van a entregar por un canal seguro) un enlace de invitación válido por 72&nbsp;horas para elegir tu propia contraseña. El enlace sirve una sola vez.</div>
     </div>
+<h2 class="subhead">Atajos de teclado</h2>
+<p class="body-text">En la computadora podés moverte más rápido con estos atajos. Las pantallas disponibles y su orden dependen de tu rol.</p>
+<table class="field-table">
+<tr><th>Tecla</th><th>Acción</th></tr>
+<tr><td><kbd>Alt</kbd> + <kbd>1</kbd>–<kbd>9</kbd></td><td>Abrir uno de los primeros nueve módulos habilitados para tu rol, en el orden indicado en la lista de atajos. En Mac, usá <kbd>Option</kbd> en lugar de <kbd>Alt</kbd>.</td></tr>
+<tr><td><kbd>/</kbd></td><td>Abrir el buscador de estudiantes, clases y pantallas; no se activa mientras escribís en un campo.</td></tr>
+<tr><td><kbd>?</kbd></td><td>Mostrar la lista completa de atajos disponibles para tu rol.</td></tr>
+<tr><td><kbd>Esc</kbd></td><td>Cerrar el panel o la ventana abiertos.</td></tr>
+<tr><td><kbd>Enter</kbd></td><td>Confirmar o enviar el formulario activo.</td></tr>
+</table>
+<p class="body-text">También podés abrir la lista desde el menú de tu cuenta → <strong>Atajos de teclado</strong>. En el celular, usá los botones de navegación de la pantalla.</p>
 </div>
 <div class="section" id="sec-dashboard">
 <h1 class="page-title">El Panel de Inicio</h1>
 <p class="page-sub">Tu resumen del día apenas entrás al sistema</p>
 <span class="role-badge badge-todos">Todos los roles</span>
 <p class="body-text">Al iniciar sesión, ves un resumen general: cuántas alumnas hay activas, inscripciones del mes, cuotas vencidas que necesitan seguimiento, y lo cobrado hasta el momento.</p>
-<figure class="shot">
-      <img src="assets/images/inicio.jpg" alt="Panel de inicio con KPIs y widgets" loading="lazy">
+<figure class="shot" data-demo-clip="inicio">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Panel de inicio"></video>
       <figcaption>Inicio — vista general</figcaption>
     </figure>
 <h2 class="subhead">Por qué algunas tarjetas son de color y otras no</h2>
@@ -173,8 +187,8 @@
 <li>Completá los datos obligatorios (marcados con *): nombre, apellido, DNI, fecha de nacimiento, teléfono, email, adulto responsable.</li>
 <li>Si tiene hermanas ya inscriptas, buscalas en <em>Grupo familiar</em> para aplicar el 10% de descuento automáticamente.</li>
 <li>Tocá <strong>Guardar alumno</strong>.</li></ol>
-<figure class="shot">
-      <img src="assets/images/nuevo-alumno.jpg" alt="Formulario de alta de alumna" loading="lazy">
+<figure class="shot" data-demo-clip="alta-estudiante">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Alta de estudiante"></video>
       <figcaption>Modal Nuevo Alumno</figcaption>
     </figure>
 <div class="callout callout-warn">
@@ -183,8 +197,8 @@
     </div>
 <h2 class="subhead">Ver y buscar alumnas</h2>
 <p class="body-text">La tabla principal te deja buscar por nombre o DNI, y filtrar por grupo o estado (activas/inactivas). Cada fila tiene 3 acciones: <strong>Ver Ficha</strong> (toda la información en detalle), <strong>Modificar</strong> (edición rápida) y <strong>Dar de baja</strong> (baja lógica, nunca se borra el historial).</p>
-<figure class="shot">
-      <img src="assets/images/alumnos.jpg" alt="Tabla de gestión de alumnos" loading="lazy">
+<figure class="shot" data-demo-clip="estudiantes">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Gestión de estudiantes"></video>
       <figcaption>Listado de Alumnas</figcaption>
     </figure>
 </div>
@@ -196,8 +210,8 @@
 <li>Andá a la tab <strong>Ficha Médica</strong>.</li>
 <li>Si es la primera vez, vas a ver el botón <strong>+ Agregar Ficha Médica</strong> — tocalo para cargar los datos.</li>
 <li>Completá grupo sanguíneo, alergias, medicación, obra social, vencimiento del apto físico y contacto de emergencia.</li></ol>
-<figure class="shot">
-      <img src="assets/images/ficha-medica.jpg" alt="Ficha médica de la alumna con datos cargados" loading="lazy">
+<figure class="shot" data-demo-clip="ficha-estudiante">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Ficha 360 de estudiante"></video>
       <figcaption>Ficha Médica — con datos</figcaption>
     </figure>
 <div class="callout callout-warn">
@@ -210,45 +224,47 @@
 <p class="page-sub">Plantel docente, especialidades y disponibilidad</p>
 <span class="role-badge badge-secretaria">Directora y Secretaria</span>
 <p class="body-text">La tabla de Profesores muestra el plantel completo con sus especialidades, años de experiencia y estado (disponible o en licencia). Tocá <strong>Ver Ficha 360°</strong> para acceder a toda su información.</p>
-<figure class="shot">
-      <img src="assets/images/profesores.jpg" alt="Listado de profesores" loading="lazy">
+<figure class="shot" data-demo-clip="profesoras">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Profesores"></video>
       <figcaption>Listado de Profesores</figcaption>
     </figure>
-<h2 class="subhead">La Ficha 360° tiene 5 tabs</h2>
+<h2 class="subhead">La Ficha 360° organiza la información en tres pestañas</h2>
+<p class="body-text">Abrí el menú de opciones de una profesora y elegí <strong>Ver ficha 360°</strong>. La ficha muestra sus datos, perfil profesional y licencias sin salir del listado.</p>
+<figure class="shot" data-demo-clip="ficha-profesora">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Ficha 360 de profesora"></video>
+      <figcaption>Ficha 360° — Datos, Perfil y Licencias</figcaption>
+    </figure>
 <table class="field-table">
 <tr><th>Tab</th><th>Qué encontrás</th></tr>
-<tr><td>Info Básica</td><td>Datos de contacto, fecha de nacimiento, foto</td></tr>
-<tr><td>Perfil Profesional</td><td>Estudios, especialidades, biografía</td></tr>
-<tr><td>Datos Admin.</td><td>Sueldo, contratación — solo visible para Directora</td></tr>
-<tr><td>Licencias</td><td>Calendario de ausencias y búsqueda de suplentes</td></tr>
-<tr><td>Coreografías</td><td>Historial de coreografías dirigidas por evento</td></tr>
+<tr><td>Datos</td><td>Información personal, contacto y disponibilidad</td></tr>
+<tr><td>Perfil</td><td>Disciplinas, formación, experiencia y biografía</td></tr>
+<tr><td>Licencias</td><td>Ausencias registradas y acceso para marcar una nueva</td></tr>
 </table>
 </div>
 <div class="section" id="sec-licencias">
 <h1 class="page-title">Licencias y Suplencias</h1>
-<p class="page-sub">Cuando una profesora falta, el sistema busca reemplazo solo</p>
+<p class="page-sub">Registrá una ausencia y revisá las clases que afecta</p>
 <span class="role-badge badge-secretaria">Directora y Secretaria</span>
-<ol class="steps"><li>Entrá a la Ficha 360° de la profesora → tab <strong>Licencias</strong>.</li>
-<li>Tocá <strong>+ Marcar Licencia</strong>.</li>
-<li>Elegí las fechas y el motivo (examen, viaje, enfermedad, otro).</li>
-<li>El sistema detecta solo qué comisiones se ven afectadas.</li>
-<li>Activá <em>Buscar suplente automáticamente por WhatsApp</em> para que se les consulte a otras profesoras disponibles.</li>
-<li>Vas a ver el estado <strong>Buscando reemplazo...</strong> hasta que alguien confirme por WhatsApp.</li></ol>
-<figure class="shot">
-      <img src="assets/images/ficha-profesor.jpg" alt="Ficha del profesor con calendario de licencias" loading="lazy">
-      <figcaption>Tab Licencias — con suplente confirmado</figcaption>
+<ol class="steps"><li>Abrí la Ficha 360° de la profesora y elegí la pestaña <strong>Licencias</strong>.</li>
+<li>Tocá <strong>Marcar licencia</strong> para abrir el formulario.</li>
+<li>Indicá la fecha de inicio, la fecha de fin si corresponde y el motivo.</li>
+<li>Revisá la vista previa de las clases afectadas y si hace falta buscar suplente.</li>
+<li>Cuando la información esté lista, confirmá la licencia para guardarla.</li></ol>
+<figure class="shot" data-demo-clip="licencias">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Marcar una licencia"></video>
+      <figcaption>Licencias — fechas, motivo y clases afectadas</figcaption>
     </figure>
 <div class="callout callout-tip">
-      <div class="callout-title">Confirmación automática</div>
-      <div class="callout-body">Apenas una profesora confirma la suplencia por WhatsApp, el estado cambia solo a "Confirmada" — no hace falta que lo cargues vos manualmente.</div>
+      <div class="callout-title">Antes de confirmar</div>
+      <div class="callout-body">La vista previa indica qué clases coinciden con las fechas elegidas. Revisala y elegí si hace falta buscar una suplente antes de guardar.</div>
     </div>
 </div><div class="section" id="sec-clases">
 <h1 class="page-title">Clases y Comisiones</h1>
 <p class="page-sub">La oferta académica de la academia</p>
 <span class="role-badge badge-secretaria">Directora y Secretaria</span>
 <p class="body-text">Cada comisión combina una disciplina, un horario, una sala y una profesora. El cupo máximo institucional es de <strong>25 alumnas por comisión</strong>.</p>
-<figure class="shot">
-      <img src="assets/images/clases.jpg" alt="Listado de comisiones con barra de cupo" loading="lazy">
+<figure class="shot" data-demo-clip="clases">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Clases y comisiones"></video>
       <figcaption>Clases y Comisiones</figcaption>
     </figure>
 <h2 class="subhead">Leer la barra de cupo</h2>
@@ -260,8 +276,8 @@
 </table>
 <h2 class="subhead">Ver el detalle de una comisión</h2>
 <p class="body-text">Tocá el nombre de cualquier comisión para ver un resumen completo: cuántas alumnas están inscriptas, el % de asistencia promedio, lo que factura por mes, y el listado completo de alumnas con su estado de pago.</p>
-<figure class="shot">
-      <img src="assets/images/detalle-comision.jpg" alt="Panel de detalle con roster de alumnas" loading="lazy">
+<figure class="shot" data-demo-clip="clases">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Clases y comisiones"></video>
       <figcaption>Detalle de Comisión</figcaption>
     </figure>
 </div>
@@ -274,8 +290,8 @@
 <li>Elegí la comisión.</li>
 <li>Si hay cupo, la inscripción queda <strong>Confirmada</strong>.</li>
 <li>Si no hay cupo, el sistema te ofrece anotarla en <strong>Lista de Espera</strong> — se le avisa por WhatsApp automáticamente apenas se libera un lugar.</li></ol>
-<figure class="shot">
-      <img src="assets/images/inscripciones.jpg" alt="Tabla de inscripciones con estados" loading="lazy">
+<figure class="shot" data-demo-clip="inscripciones">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Inscripciones"></video>
       <figcaption>Listado de Inscripciones</figcaption>
     </figure>
 <div class="callout callout-info">
@@ -290,8 +306,8 @@
 <ol class="steps"><li>Elegí la <strong>Comisión</strong> y la <strong>Fecha</strong> arriba de todo.</li>
 <li>Tocá cada interruptor para marcar Presente / Ausente.</li>
 <li>Tocá <strong>Guardar Asistencia</strong> al terminar.</li></ol>
-<figure class="shot">
-      <img src="assets/images/asistencia.jpg" alt="Pasar lista con toggles de presente/ausente" loading="lazy">
+<figure class="shot" data-demo-clip="asistencia">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Asistencia"></video>
       <figcaption>Control de Asistencia</figcaption>
     </figure>
 <div class="callout callout-warn">
@@ -304,8 +320,8 @@
 <p class="page-sub">Cuenta corriente de cada alumna, por familia, por comisión o de vestuario</p>
 <span class="role-badge badge-secretaria">Directora y Secretaria</span>
 <p class="body-text">Pagos tiene cuatro pestañas: <strong>Por estudiante</strong>, <strong>Por grupo familiar</strong> (para ver y cobrar el total de hermanos juntos), <strong>Por comisión</strong> (el estado de una comisión entera) y <strong>Vestuario</strong> (cuenta corriente aparte para trajes del festival, que no son un cobro recurrente).</p>
-<figure class="shot">
-      <img src="assets/images/cobros.jpg" alt="Cuenta corriente y registro de pago manual" loading="lazy">
+<figure class="shot" data-demo-clip="pagos">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Pagos y cuotas"></video>
       <figcaption>Cobros y Cuotas</figcaption>
     </figure>
 <h2 class="subhead">Tres formas de cobrar</h2>
@@ -329,8 +345,8 @@
 <li>Revisá los montos (toman el sueldo base configurado por persona).</li>
 <li>Tocá <strong>Aprobar Liquidación</strong> cuando esté todo correcto.</li>
 <li>Una vez pagada, marcala como <strong>Pagada</strong>.</li></ol>
-<figure class="shot">
-      <img src="assets/images/sueldos.jpg" alt="Tabla de liquidación de sueldos por persona" loading="lazy">
+<figure class="shot" data-demo-clip="sueldos">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Sueldos"></video>
       <figcaption>Liquidación de Sueldos</figcaption>
     </figure>
 <div class="callout callout-role">
@@ -343,8 +359,8 @@
 <p class="page-sub">Notas de Profesorado — Expresión, Ritmo y Técnica</p>
 <span class="role-badge badge-profesora">Todos los roles</span>
 <p class="body-text">Solo se cargan notas para las disciplinas de Profesorado (Danza Clásica, Jazz, Zapateo Americano, Danza Española). Las clases recreativas no tienen evaluación formal.</p>
-<figure class="shot">
-      <img src="assets/images/evaluaciones.jpg" alt="Tabla de notas por criterio y alumna" loading="lazy">
+<figure class="shot" data-demo-clip="evaluaciones">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Evaluaciones"></video>
       <figcaption>Evaluaciones y Notas</figcaption>
     </figure>
 <ol class="steps"><li>Elegí el examen arriba de todo — tiene que existir como evento tipo <em>Examen</em> en Eventos primero.</li>
@@ -358,8 +374,8 @@
 <p class="body-text">Al crear un evento elegís un tipo: <strong>Gala/Muestra</strong>, <strong>Festival</strong>, <strong>Examen</strong> u <strong>Otro</strong>. Todo evento guardado acá queda visible también en el Calendario.</p>
 <ol class="steps"><li>Tocá <strong>+ Nuevo Evento</strong> y elegí el tipo.</li>
 <li>Si activás <em>Habilitar cronograma</em>, vas a poder organizar las coreografías en tandas.</li></ol>
-<figure class="shot">
-      <img src="assets/images/eventos.jpg" alt="Cronograma del show organizado por tandas" loading="lazy">
+<figure class="shot" data-demo-clip="eventos">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Eventos"></video>
       <figcaption>Eventos — Cronograma del Show</figcaption>
     </figure>
 <h2 class="subhead">Cronograma por tandas</h2>
@@ -374,8 +390,8 @@
 <p class="page-sub">Clases, eventos, cumpleaños y licencias en un solo lugar</p>
 <span class="role-badge badge-todos">Todos los roles</span>
 <p class="body-text">El calendario mensual combina automáticamente todo lo que ya cargaste en otros módulos — no hace falta cargar nada acá directamente.</p>
-<figure class="shot">
-      <img src="assets/images/calendario.jpg" alt="Vista mensual del calendario con leyenda de colores" loading="lazy">
+<figure class="shot" data-demo-clip="calendario">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Calendario"></video>
       <figcaption>Calendario</figcaption>
     </figure>
 <ol class="steps"><li>Tocá cualquier día para ver el detalle de lo que pasa esa fecha.</li>
@@ -385,8 +401,8 @@
 <h1 class="page-title">Reportes</h1>
 <p class="page-sub">Morosidad y ocupación de un vistazo</p>
 <span class="role-badge badge-directora">Solo Directora</span>
-<figure class="shot">
-      <img src="assets/images/reportes.jpg" alt="Reportes de morosidad y ocupación de comisiones" loading="lazy">
+<figure class="shot" data-demo-clip="reportes">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Reportes"></video>
       <figcaption>Reportes y Estadísticas</figcaption>
     </figure>
 <p class="body-text">Dos reportes principales: <strong>morosidad por alumna</strong> (quiénes tienen cuotas vencidas acumuladas) y <strong>ocupación de comisiones</strong> (qué tan llenas están, para decidir si conviene fusionar grupos chicos). Podés exportar todo a Excel o PDF con el botón de arriba.</p>
@@ -395,20 +411,18 @@
 <h1 class="page-title">Notificaciones</h1>
 <p class="page-sub">Todo lo que necesita tu atención, en un solo lugar</p>
 <span class="role-badge badge-todos">Todos los roles</span>
-<figure class="shot">
-      <img src="assets/images/notificaciones.jpg" alt="Panel de notificaciones con envío de WhatsApp masivo" loading="lazy">
+<figure class="shot" data-demo-clip="notificaciones">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Notificaciones"></video>
       <figcaption>Centro de Notificaciones</figcaption>
     </figure>
-<p class="body-text">Cada notificación te lleva directo a la pantalla correspondiente al tocarla — una suplencia confirmada te lleva a la Ficha del Profesor, una cuota vencida te lleva a Cobros.</p>
-<h2 class="subhead">WhatsApp masivo</h2>
-<p class="body-text">Desde el mismo panel podés mandar un aviso a todas las familias de una comisión a la vez (por ejemplo, avisar que se suspende una clase).</p>
+<p class="body-text">Revisá cada aviso para consultar su contexto y usá la navegación del sistema para abrir el módulo relacionado. Los avisos disponibles dependen de la actividad y los permisos de tu cuenta.</p>
 </div>
 <div class="section" id="sec-configuracion">
 <h1 class="page-title">Configuración</h1>
 <p class="page-sub">El panel de control de toda la academia</p>
 <span class="role-badge badge-directora">Solo Directora</span>
-<figure class="shot">
-      <img src="assets/images/configuracion.jpg" alt="Panel de configuración con 6 tabs" loading="lazy">
+<figure class="shot" data-demo-clip="configuracion">
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Configuración"></video>
       <figcaption>Configuración — Personal y Accesos</figcaption>
     </figure>
 <table class="field-table">
@@ -428,12 +442,32 @@
 <div class="section" id="sec-faq">
 <h1 class="page-title">Preguntas Frecuentes</h1>
 <p class="page-sub">Dudas comunes del uso diario</p>
-<div class="faq-item"><div class="faq-q">¿Cómo doy de baja a una alumna?</div><div class="faq-a">Desde Alumnos, tocá "Dar de baja" en su fila. Es una baja lógica — el historial de la alumna se conserva, no se borra nada.</div></div>
-<div class="faq-item"><div class="faq-q">¿Puedo recuperar una alumna dada de baja?</div><div class="faq-a">Sí, filtrá por Estado: Inactivos en la tabla de Alumnos y reactivala desde ahí.</div></div>
-<div class="faq-item"><div class="faq-q">¿Qué pasa si una profesora falta sin avisar con anticipación?</div><div class="faq-a">Igual podés marcar la licencia el mismo día — el sistema va a buscar suplente igual, aunque el tiempo de respuesta por WhatsApp puede ser más ajustado.</div></div>
-<div class="faq-item"><div class="faq-q">¿Los padres pueden ver las notas de sus hijas?</div><div class="faq-a">Sí, desde la PWA de familias, en la sección Notas.</div></div>
-<div class="faq-item"><div class="faq-q">¿Cómo cambio mi contraseña?</div><div class="faq-a">Desde el ícono de tu usuario abajo del menú lateral. Si la perdiste, pedile a la Directora que te la restablezca desde Configuración — te va a llegar un enlace de invitación nuevo, de un solo uso, para elegir una contraseña distinta.</div></div>
-<div class="faq-item"><div class="faq-q">¿Qué significa el candado en Sueldos?</div><div class="faq-a">Indica que esa acción está bloqueada para tu rol — solo la Directora puede aprobar liquidaciones de sueldo.</div></div>
+<div class="faq-list">
+  <details class="faq-item">
+    <summary class="faq-q">¿Cómo doy de baja a una alumna?</summary>
+    <p class="faq-a">Desde Alumnos, tocá "Dar de baja" en su fila. Es una baja lógica — el historial de la alumna se conserva, no se borra nada.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">¿Puedo recuperar una alumna dada de baja?</summary>
+    <p class="faq-a">Sí, filtrá por Estado: Inactivos en la tabla de Alumnos y reactivala desde ahí.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">¿Qué pasa si una profesora falta sin avisar con anticipación?</summary>
+    <p class="faq-a">Igual podés marcar la licencia el mismo día — el sistema va a buscar suplente igual, aunque el tiempo de respuesta por WhatsApp puede ser más ajustado.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">¿Los padres pueden ver las notas de sus hijas?</summary>
+    <p class="faq-a">Sí, desde la PWA de familias, en la sección Notas.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">¿Cómo cambio mi contraseña?</summary>
+    <p class="faq-a">Desde el ícono de tu usuario abajo del menú lateral. Si la perdiste, pedile a la Directora que te la restablezca desde Configuración — te va a llegar un enlace de invitación nuevo, de un solo uso, para elegir una contraseña distinta.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-q">¿Qué significa el candado en Sueldos?</summary>
+    <p class="faq-a">Indica que esa acción está bloqueada para tu rol — solo la Directora puede aprobar liquidaciones de sueldo.</p>
+  </details>
+</div>
 </div>
 <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
 <nav class="mobile-tabbar" aria-label="Navegación rápida">
@@ -453,6 +487,47 @@
     <svg aria-hidden="true"><use href="#icon-more"></use></svg><span>Más</span>
   </button>
 </nav>
-</main><script src="js/script.js"></script>
+<section class="chat-widget" id="chatWidget" role="dialog" aria-label="Asistente virtual CREAR" aria-modal="false" hidden>
+  <header class="chat-widget-header">
+    <div class="chat-widget-title">
+      <strong>Hablemos con Tina</strong>
+      <span>Ayuda para usar el manual</span>
+    </div>
+    <button class="chat-widget-close" id="chatWidgetClose" type="button" aria-label="Cerrar asistente">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+    </button>
+  </header>
+  <div class="chat-widget-messages" id="chatWidgetMessages" aria-live="polite" aria-relevant="additions text">
+    <div class="chat-message assistant-message">
+      ¡Hola! Soy Tina, tu asistente virtual de CREAR. Puedo orientarte sobre las secciones y funciones que explica este manual. ¿Qué necesitás?
+    </div>
+    <p class="chat-widget-privacy">No compartas contraseñas, datos médicos ni información personal.</p>
+  </div>
+  <div class="chat-widget-error" id="chatWidgetError" role="alert" hidden>
+    <p id="chatWidgetErrorText"></p>
+    <button id="chatWidgetRetry" type="button">Reintentar</button>
+  </div>
+  <form class="chat-widget-form" id="chatWidgetForm">
+    <label class="visually-hidden" for="chatWidgetInput">Escribí tu consulta</label>
+    <input id="chatWidgetInput" name="message" type="text" maxlength="1200" autocomplete="off" placeholder="Escribí tu consulta…" required>
+    <button id="chatWidgetSend" type="submit" aria-label="Enviar mensaje">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
+    </button>
+  </form>
+</section>
+<aside class="tina-assistant" id="tinaAssistant" aria-label="Tina, guía del manual">
+  <button class="tina-avatar-button" id="tinaAvatarButton" type="button" aria-label="Escuchar a Tina">
+    <span class="tina-avatar chat-mascot" id="tinaAvatar" aria-hidden="true"></span>
+  </button>
+  <div class="tina-speech" id="tinaSpeechBubble" aria-live="polite">
+    <strong id="tinaGreeting">¡Hola, soy Tina!</strong>
+    <p id="tinaGuideText">¡Bienvenida al manual! Te voy contando qué podés encontrar en cada sección.</p>
+    <div class="tina-actions">
+      <button id="tinaSpeak" type="button" aria-pressed="false">Escuchar</button>
+      <button id="tinaAsk" type="button" aria-expanded="false" aria-controls="chatWidget">Preguntame</button>
+    </div>
+  </div>
+</aside>
+</main><script src="assets/vendor/lottie_light.min.js"></script><script src="js/script.js"></script>
 </body>
 </html>
