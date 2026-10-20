@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manual de Usuario — CREAR</title>
+<meta name="description" content="Manual de usuario del Sistema de Gestión Académica CREAR — Academia de Danzas.">
+<link rel="icon" type="image/png" href="assets/images/tina.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -35,8 +37,8 @@
   <div class="brand">
     <div class="brand-identity">
       <span class="brand-logo" role="img" aria-label="CREAR — Academia de Danzas">
-        <img class="brand-logo-light" src="assets/images/logo-horizontal.webp" alt="">
-        <img class="brand-logo-dark" src="assets/images/logo-horizontal-blanco.webp" alt="">
+        <img class="brand-logo-light" src="assets/images/logo-horizontal.png" alt="">
+        <img class="brand-logo-dark" src="assets/images/logo-horizontal-blanco.png" alt="">
       </span>
       <span class="brand-sub">Manual de Usuario</span>
     </div>
@@ -51,7 +53,7 @@
   <div class="nav-item" data-section="inicio-nav" onclick="showSection('inicio-nav')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-book"></use></svg><span>Cómo empezar</span></div>
   <div class="nav-item" data-section="dashboard" onclick="showSection('dashboard')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-chart"></use></svg><span>El Panel de Inicio</span></div>
   <div class="nav-section-label">Alumnas</div>
-  <div class="nav-item" data-section="alumnos" onclick="showSection('alumnos')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-users"></use></svg><span>Gestión de Alumnas</span></div>
+  <div class="nav-item" data-section="alumnos" onclick="showSection('alumnos')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-users"></use></svg><span>Estudiantes</span></div>
   <div class="nav-item" data-section="ficha-medica" onclick="showSection('ficha-medica')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-id"></use></svg><span>Ficha Médica</span></div>
   <div class="nav-section-label">Docentes</div>
   <div class="nav-item" data-section="profesores" onclick="showSection('profesores')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-teacher"></use></svg><span>Profesores</span></div>
@@ -61,7 +63,7 @@
   <div class="nav-item" data-section="inscripciones" onclick="showSection('inscripciones')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-clipboard"></use></svg><span>Inscripciones</span></div>
   <div class="nav-item" data-section="asistencia" onclick="showSection('asistencia')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-checklist"></use></svg><span>Asistencia</span></div>
   <div class="nav-section-label">Administración</div>
-  <div class="nav-item" data-section="pagos" onclick="showSection('pagos')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-wallet"></use></svg><span>Pagos y Cuotas</span></div>
+  <div class="nav-item" data-section="pagos" onclick="showSection('pagos')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-wallet"></use></svg><span>Cobros y Cuotas</span></div>
   <div class="nav-item" data-section="sueldos" onclick="showSection('sueldos')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-money"></use></svg><span>Sueldos</span></div>
   <div class="nav-item" data-section="evaluaciones" onclick="showSection('evaluaciones')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-medal"></use></svg><span>Evaluaciones</span></div>
   <div class="nav-section-label">Organización</div>
@@ -78,58 +80,58 @@
 <header class="topbar">
   <div class="topbar-actions">
     <span class="mobile-brand-logo" role="img" aria-label="CREAR — Academia de Danzas">
-      <img class="brand-logo-light" src="assets/images/logo-horizontal.webp" alt="">
-      <img class="brand-logo-dark" src="assets/images/logo-horizontal-blanco.webp" alt="">
+      <img class="brand-logo-light" src="assets/images/logo-horizontal.png" alt="">
+      <img class="brand-logo-dark" src="assets/images/logo-horizontal-blanco.png" alt="">
     </span>
     <label class="search-box" for="searchInput">
       <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.3 4.3"></path></svg>
       <input type="search" id="searchInput" placeholder="Buscar en el manual..." autocomplete="off">
       <span class="search-hint" aria-hidden="true">/</span>
     </label>
-    <button class="notification-link" type="button" onclick="showSection('notificaciones')" aria-label="Ver la guía de notificaciones" title="Notificaciones">
-      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg>
-    </button>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false">
       <svg class="toggle-icon sun-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
       <span class="toggle-track"><span class="toggle-thumb"></span></span>
       <svg class="toggle-icon moon-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z"></path></svg>
     </button>
-    <div class="user-chip" aria-label="Equipo de la academia CREAR">
-      <span class="user-avatar" aria-hidden="true">CR</span><span class="user-label"><strong>Equipo CREAR</strong><small>Academia</small></span>
+    <div class="print-wrap">
+      <button class="ghost-action" id="printBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="printMenu">Imprimir / PDF</button>
+      <div class="print-menu" id="printMenu" role="menu" hidden>
+        <button type="button" role="menuitem" data-print="seccion"><strong>Esta sección</strong><small>Guía de pasos de lo que estás viendo</small></button>
+        <button type="button" role="menuitem" data-print="todo"><strong>Todo el manual</strong><small>Guía de pasos de todas las secciones</small></button>
+      </div>
     </div>
-    <button class="primary-action" type="button" onclick="showSection('inscripciones')" title="Abrir la guía para crear una inscripción">Nueva inscripción</button>
   </div>
 </header>
+<div class="print-head" aria-hidden="true"><img src="assets/images/logo-horizontal.png" alt=""><span>Manual de Usuario · Guía de pasos — Sistema de Gestión Académica CREAR</span></div>
 <div class="section active" id="sec-portada">
-<div class="cover">
-  <span class="cover-logo" role="img" aria-label="CREAR — Academia de Danzas">
-    <img class="brand-logo-light" src="assets/images/logo-horizontal.webp" alt="">
-    <img class="brand-logo-dark" src="assets/images/logo-horizontal-blanco.webp" alt="">
-  </span>
-  <h1>Manual de Usuario</h1>
-  <p>Sistema de Gestión Académica CREAR — Academia de Danzas</p>
+<section class="hh" aria-label="Bienvenida al manual">
+  <div class="hh-text">
+    <p class="hh-eyebrow" id="heroEyebrow"></p>
+    <h1 class="hh-title" id="heroGreeting">Buenas tardes</h1>
+    <form class="hh-search" id="heroSearch" role="search">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4.3 4.3"></path></svg>
+      <input id="heroSearchInput" type="text" placeholder="¿Qué necesitás hacer? Ej.: cobrar una cuota" autocomplete="off" aria-label="Preguntale al manual">
+      <button type="submit">Preguntar</button>
+    </form>
+  </div>
+  <img class="hh-art hh-art-claro" src="assets/images/logo-vertical.png" alt="">
+  <img class="hh-art hh-art-oscuro" src="assets/images/hero-crear.png" alt="">
+</section>
+<h2 class="home-label">Tareas frecuentes</h2>
+<div class="task-grid">
+  <button class="task" type="button" onclick="showSection('pagos')"><span class="task-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-wallet"></use></svg></span><span class="task-txt"><strong>Cobrar una cuota</strong><small>Efectivo, transferencia o Mercado Pago</small></span><span class="task-go" aria-hidden="true">›</span></button>
+  <button class="task" type="button" onclick="showSection('alumnos')"><span class="task-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-users"></use></svg></span><span class="task-txt"><strong>Dar de alta una alumna</strong><small>Datos personales, tutor y ficha</small></span><span class="task-go" aria-hidden="true">›</span></button>
+  <button class="task" type="button" onclick="showSection('asistencia')"><span class="task-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-checklist"></use></svg></span><span class="task-txt"><strong>Tomar asistencia</strong><small>Presentes, ausentes y justificadas</small></span><span class="task-go" aria-hidden="true">›</span></button>
+  <button class="task" type="button" onclick="showSection('sueldos')"><span class="task-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-money"></use></svg></span><span class="task-txt"><strong>Pagar un sueldo</strong><small>Liquidación mensual de profesoras</small></span><span class="task-go" aria-hidden="true">›</span></button>
+  <button class="task" type="button" onclick="showSection('licencias')"><span class="task-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-calendar-off"></use></svg></span><span class="task-txt"><strong>Marcar una licencia</strong><small>Ausencias y suplencias</small></span><span class="task-go" aria-hidden="true">›</span></button>
+  <button class="task" type="button" onclick="showSection('eventos')"><span class="task-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-mask"></use></svg></span><span class="task-txt"><strong>Cargar un evento</strong><small>Festivales, muestras y vestuario</small></span><span class="task-go" aria-hidden="true">›</span></button>
 </div>
-<div class="role-grid">
-  <div class="role-card" onclick="showSection('inicio-nav')">
-    <div class="dot" style="background:#D70015"></div>
-    <h3>Directora</h3>
-    <p>Acceso completo: configuración, sueldos, reportes y todo el resto del sistema.</p>
-  </div>
-  <div class="role-card" onclick="showSection('inicio-nav')">
-    <div class="dot" style="background:#0040DD"></div>
-    <h3>Secretaria</h3>
-    <p>Gestión diaria: alumnas, inscripciones, cobros y asistencia — sin configuración ni sueldos.</p>
-  </div>
-  <div class="role-card" onclick="showSection('inicio-nav')">
-    <div class="dot" style="background:#248A3D"></div>
-    <h3>Profesora</h3>
-    <p>Su propia ficha, asistencia de sus comisiones, y carga de notas de Profesorado.</p>
-  </div>
+<h2 class="home-label">Quién usa qué</h2>
+<div class="role-list">
+  <button class="role-row" type="button" onclick="showSection('inicio-nav')"><strong>Directora</strong><span>Acceso completo: configuración, sueldos y reportes</span><i aria-hidden="true">›</i></button>
+  <button class="role-row" type="button" onclick="showSection('inicio-nav')"><strong>Secretaria</strong><span>Gestión diaria: alumnas, inscripciones, cobros y asistencia</span><i aria-hidden="true">›</i></button>
+  <button class="role-row" type="button" onclick="showSection('inicio-nav')"><strong>Profesora</strong><span>Su ficha, asistencia de sus comisiones y notas</span><i aria-hidden="true">›</i></button>
 </div>
-<div class="callout callout-info">
-      <div class="callout-title">Cómo usar este manual</div>
-      <div class="callout-body">Elegí una sección del menú de la izquierda, o buscá una palabra clave arriba del todo. Los recorridos en video muestran el sistema actual: en computadora vas a ver la versión de escritorio y en el celular, la vista adaptada a esa pantalla.</div>
-    </div>
 </div>
 <div class="section" id="sec-inicio-nav">
 <h1 class="page-title">Cómo empezar</h1>
@@ -142,9 +144,10 @@
 <li>Tocá <strong>Iniciar sesión</strong>.</li>
 <li>Si olvidaste tu contraseña, tocá <em>¿Olvidaste tu contraseña?</em> y seguí las instrucciones que llegan a tu email.</li></ol>
 <figure class="shot" data-demo-clip="login">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Inicio de sesión"></video>
+      <video class="demo-video" loop muted playsinline preload="none" aria-label="Pantalla de Login"></video>
       <figcaption>Pantalla de Login</figcaption>
     </figure>
+
 <div class="callout callout-tip">
       <div class="callout-title">Primera vez</div>
       <div class="callout-body">Si es tu primer ingreso, la Directora ya te dio de alta desde Configuración — te llegó (o te van a entregar por un canal seguro) un enlace de invitación válido por 72&nbsp;horas para elegir tu propia contraseña. El enlace sirve una sola vez.</div>
@@ -167,7 +170,7 @@
 <span class="role-badge badge-todos">Todos los roles</span>
 <p class="body-text">Al iniciar sesión, ves un resumen general: cuántas alumnas hay activas, inscripciones del mes, cuotas vencidas que necesitan seguimiento, y lo cobrado hasta el momento.</p>
 <figure class="shot" data-demo-clip="inicio">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Panel de inicio"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/inicio.jpg" aria-label="Pantalla de Inicio — vista general"></video>
       <figcaption>Inicio — vista general</figcaption>
     </figure>
 <h2 class="subhead">Por qué algunas tarjetas son de color y otras no</h2>
@@ -178,7 +181,7 @@
     </div>
 </div>
 <div class="section" id="sec-alumnos">
-<h1 class="page-title">Gestión de Alumnas</h1>
+<h1 class="page-title">Estudiantes</h1>
 <p class="page-sub">Alta, edición y ficha completa de cada alumna</p>
 <span class="role-badge badge-secretaria">Directora y Secretaria</span>
 <h2 class="subhead">Cargar una alumna nueva</h2>
@@ -188,7 +191,7 @@
 <li>Si tiene hermanas ya inscriptas, buscalas en <em>Grupo familiar</em> para aplicar el 10% de descuento automáticamente.</li>
 <li>Tocá <strong>Guardar alumno</strong>.</li></ol>
 <figure class="shot" data-demo-clip="alta-estudiante">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Alta de estudiante"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/alta-estudiante.jpg" aria-label="Pantalla de Modal Nuevo Alumno"></video>
       <figcaption>Modal Nuevo Alumno</figcaption>
     </figure>
 <div class="callout callout-warn">
@@ -198,7 +201,7 @@
 <h2 class="subhead">Ver y buscar alumnas</h2>
 <p class="body-text">La tabla principal te deja buscar por nombre o DNI, y filtrar por grupo o estado (activas/inactivas). Cada fila tiene 3 acciones: <strong>Ver Ficha</strong> (toda la información en detalle), <strong>Modificar</strong> (edición rápida) y <strong>Dar de baja</strong> (baja lógica, nunca se borra el historial).</p>
 <figure class="shot" data-demo-clip="estudiantes">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Gestión de estudiantes"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/estudiantes.jpg" aria-label="Pantalla de Listado de Alumnas"></video>
       <figcaption>Listado de Alumnas</figcaption>
     </figure>
 </div>
@@ -211,7 +214,7 @@
 <li>Si es la primera vez, vas a ver el botón <strong>+ Agregar Ficha Médica</strong> — tocalo para cargar los datos.</li>
 <li>Completá grupo sanguíneo, alergias, medicación, obra social, vencimiento del apto físico y contacto de emergencia.</li></ol>
 <figure class="shot" data-demo-clip="ficha-estudiante">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Ficha 360 de estudiante"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/ficha-estudiante.jpg" aria-label="Pantalla de Ficha Médica — con datos"></video>
       <figcaption>Ficha Médica — con datos</figcaption>
     </figure>
 <div class="callout callout-warn">
@@ -225,13 +228,13 @@
 <span class="role-badge badge-secretaria">Directora y Secretaria</span>
 <p class="body-text">La tabla de Profesores muestra el plantel completo con sus especialidades, años de experiencia y estado (disponible o en licencia). Tocá <strong>Ver Ficha 360°</strong> para acceder a toda su información.</p>
 <figure class="shot" data-demo-clip="profesoras">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Profesores"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/profesoras.jpg" aria-label="Pantalla de Listado de Profesores"></video>
       <figcaption>Listado de Profesores</figcaption>
     </figure>
 <h2 class="subhead">La Ficha 360° organiza la información en tres pestañas</h2>
 <p class="body-text">Abrí el menú de opciones de una profesora y elegí <strong>Ver ficha 360°</strong>. La ficha muestra sus datos, perfil profesional y licencias sin salir del listado.</p>
 <figure class="shot" data-demo-clip="ficha-profesora">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Ficha 360 de profesora"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/ficha-profesora.jpg" aria-label="Pantalla de Ficha 360° — Datos, Perfil y Licencias"></video>
       <figcaption>Ficha 360° — Datos, Perfil y Licencias</figcaption>
     </figure>
 <table class="field-table">
@@ -251,7 +254,7 @@
 <li>Revisá la vista previa de las clases afectadas y si hace falta buscar suplente.</li>
 <li>Cuando la información esté lista, confirmá la licencia para guardarla.</li></ol>
 <figure class="shot" data-demo-clip="licencias">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Marcar una licencia"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/licencias.jpg" aria-label="Pantalla de Licencias — fechas, motivo y clases afectadas"></video>
       <figcaption>Licencias — fechas, motivo y clases afectadas</figcaption>
     </figure>
 <div class="callout callout-tip">
@@ -264,7 +267,7 @@
 <span class="role-badge badge-secretaria">Directora y Secretaria</span>
 <p class="body-text">Cada comisión combina una disciplina, un horario, una sala y una profesora. El cupo máximo institucional es de <strong>25 alumnas por comisión</strong>.</p>
 <figure class="shot" data-demo-clip="clases">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Clases y comisiones"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/clases.jpg" aria-label="Pantalla de Clases y Comisiones"></video>
       <figcaption>Clases y Comisiones</figcaption>
     </figure>
 <h2 class="subhead">Leer la barra de cupo</h2>
@@ -277,7 +280,7 @@
 <h2 class="subhead">Ver el detalle de una comisión</h2>
 <p class="body-text">Tocá el nombre de cualquier comisión para ver un resumen completo: cuántas alumnas están inscriptas, el % de asistencia promedio, lo que factura por mes, y el listado completo de alumnas con su estado de pago.</p>
 <figure class="shot" data-demo-clip="clases">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Clases y comisiones"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/clases-2.jpg" aria-label="Pantalla de Detalle de Comisión"></video>
       <figcaption>Detalle de Comisión</figcaption>
     </figure>
 </div>
@@ -291,7 +294,7 @@
 <li>Si hay cupo, la inscripción queda <strong>Confirmada</strong>.</li>
 <li>Si no hay cupo, el sistema te ofrece anotarla en <strong>Lista de Espera</strong> — se le avisa por WhatsApp automáticamente apenas se libera un lugar.</li></ol>
 <figure class="shot" data-demo-clip="inscripciones">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Inscripciones"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/inscripciones.jpg" aria-label="Pantalla de Listado de Inscripciones"></video>
       <figcaption>Listado de Inscripciones</figcaption>
     </figure>
 <div class="callout callout-info">
@@ -307,7 +310,7 @@
 <li>Tocá cada interruptor para marcar Presente / Ausente.</li>
 <li>Tocá <strong>Guardar Asistencia</strong> al terminar.</li></ol>
 <figure class="shot" data-demo-clip="asistencia">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Asistencia"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/asistencia.jpg" aria-label="Pantalla de Control de Asistencia"></video>
       <figcaption>Control de Asistencia</figcaption>
     </figure>
 <div class="callout callout-warn">
@@ -316,18 +319,18 @@
     </div>
 </div>
 <div class="section" id="sec-pagos">
-<h1 class="page-title">Pagos y Cuotas</h1>
+<h1 class="page-title">Cobros y Cuotas</h1>
 <p class="page-sub">Cuenta corriente de cada alumna, por familia, por comisión o de vestuario</p>
 <span class="role-badge badge-secretaria">Directora y Secretaria</span>
-<p class="body-text">Pagos tiene cuatro pestañas: <strong>Por estudiante</strong>, <strong>Por grupo familiar</strong> (para ver y cobrar el total de hermanos juntos), <strong>Por comisión</strong> (el estado de una comisión entera) y <strong>Vestuario</strong> (cuenta corriente aparte para trajes del festival, que no son un cobro recurrente).</p>
-<figure class="shot" data-demo-clip="pagos">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Pagos y cuotas"></video>
-      <figcaption>Cobros y Cuotas</figcaption>
-    </figure>
+<p class="body-text">Cobros tiene cuatro pestañas: <strong>Por estudiante</strong>, <strong>Por grupo familiar</strong> (para ver y cobrar el total de hermanos juntos), <strong>Por comisión</strong> (el estado de una comisión entera) y <strong>Vestuario</strong> (cuenta corriente aparte para trajes del festival, que no son un cobro recurrente).</p>
 <h2 class="subhead">Tres formas de cobrar</h2>
 <ol class="steps"><li><strong>Efectivo o transferencia:</strong> completá monto y método en el panel de la derecha y tocá <strong>Confirmar Pago</strong>.</li>
 <li><strong>Cobro electrónico (Mercado Pago):</strong> generá un enlace de pago por la cuota y mandáselo a la familia por WhatsApp o copiando el link. El pago se acredita solo — no hace falta cargar nada cuando Mercado Pago avisa que se cobró.</li>
 <li><strong>Vestuario:</strong> se cobra desde su propia pestaña, contra la cuenta corriente de esa alumna.</li></ol>
+<figure class="shot" data-demo-clip="pagos">
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/pagos.jpg" aria-label="Pantalla de Cobros y Cuotas"></video>
+      <figcaption>Cobros y Cuotas</figcaption>
+    </figure>
 <div class="callout callout-tip">
       <div class="callout-title">Recargo por mora</div>
       <div class="callout-body">El sistema aplica automáticamente un 5% de recargo a partir del día 10 del mes — no hace falta calcularlo a mano.</div>
@@ -346,7 +349,7 @@
 <li>Tocá <strong>Aprobar Liquidación</strong> cuando esté todo correcto.</li>
 <li>Una vez pagada, marcala como <strong>Pagada</strong>.</li></ol>
 <figure class="shot" data-demo-clip="sueldos">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Sueldos"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/sueldos.jpg" aria-label="Pantalla de Liquidación de Sueldos"></video>
       <figcaption>Liquidación de Sueldos</figcaption>
     </figure>
 <div class="callout callout-role">
@@ -359,14 +362,14 @@
 <p class="page-sub">Notas de Profesorado — Expresión, Ritmo y Técnica</p>
 <span class="role-badge badge-profesora">Todos los roles</span>
 <p class="body-text">Solo se cargan notas para las disciplinas de Profesorado (Danza Clásica, Jazz, Zapateo Americano, Danza Española). Las clases recreativas no tienen evaluación formal.</p>
-<figure class="shot" data-demo-clip="evaluaciones">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Evaluaciones"></video>
-      <figcaption>Evaluaciones y Notas</figcaption>
-    </figure>
 <ol class="steps"><li>Elegí el examen arriba de todo — tiene que existir como evento tipo <em>Examen</em> en Eventos primero.</li>
 <li>La profesora carga la nota de cada alumna en Expresión, Ritmo y Técnica (escala 1 a 10).</li>
 <li>El promedio se calcula solo.</li>
 <li>Una vez cargada, solo la <strong>Directora</strong> puede tocar <strong>Corregir Nota</strong> — y únicamente una vez: después de esa corrección la nota queda cerrada, con registro de quién corrigió y cuándo.</li></ol>
+<figure class="shot" data-demo-clip="evaluaciones">
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/evaluaciones.jpg" aria-label="Pantalla de Evaluaciones y Notas"></video>
+      <figcaption>Evaluaciones y Notas</figcaption>
+    </figure>
 </div><div class="section" id="sec-eventos">
 <h1 class="page-title">Eventos</h1>
 <p class="page-sub">Muestras, festivales, exámenes y fechas institucionales</p>
@@ -375,7 +378,7 @@
 <ol class="steps"><li>Tocá <strong>+ Nuevo Evento</strong> y elegí el tipo.</li>
 <li>Si activás <em>Habilitar cronograma</em>, vas a poder organizar las coreografías en tandas.</li></ol>
 <figure class="shot" data-demo-clip="eventos">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Eventos"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/eventos.jpg" aria-label="Pantalla de Eventos — Cronograma del Show"></video>
       <figcaption>Eventos — Cronograma del Show</figcaption>
     </figure>
 <h2 class="subhead">Cronograma por tandas</h2>
@@ -390,19 +393,19 @@
 <p class="page-sub">Clases, eventos, cumpleaños y licencias en un solo lugar</p>
 <span class="role-badge badge-todos">Todos los roles</span>
 <p class="body-text">El calendario mensual combina automáticamente todo lo que ya cargaste en otros módulos — no hace falta cargar nada acá directamente.</p>
-<figure class="shot" data-demo-clip="calendario">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Calendario"></video>
-      <figcaption>Calendario</figcaption>
-    </figure>
 <ol class="steps"><li>Tocá cualquier día para ver el detalle de lo que pasa esa fecha.</li>
 <li>Usá los botones Día / Semana / Mes arriba a la derecha para cambiar la vista.</li></ol>
+<figure class="shot" data-demo-clip="calendario">
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/calendario.jpg" aria-label="Pantalla de Calendario"></video>
+      <figcaption>Calendario</figcaption>
+    </figure>
 </div>
 <div class="section" id="sec-reportes">
 <h1 class="page-title">Reportes</h1>
 <p class="page-sub">Morosidad y ocupación de un vistazo</p>
 <span class="role-badge badge-directora">Solo Directora</span>
 <figure class="shot" data-demo-clip="reportes">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Reportes"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/reportes.jpg" aria-label="Pantalla de Reportes y Estadísticas"></video>
       <figcaption>Reportes y Estadísticas</figcaption>
     </figure>
 <p class="body-text">Dos reportes principales: <strong>morosidad por alumna</strong> (quiénes tienen cuotas vencidas acumuladas) y <strong>ocupación de comisiones</strong> (qué tan llenas están, para decidir si conviene fusionar grupos chicos). Podés exportar todo a Excel o PDF con el botón de arriba.</p>
@@ -412,7 +415,7 @@
 <p class="page-sub">Todo lo que necesita tu atención, en un solo lugar</p>
 <span class="role-badge badge-todos">Todos los roles</span>
 <figure class="shot" data-demo-clip="notificaciones">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Notificaciones"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/notificaciones.jpg" aria-label="Pantalla de Centro de Notificaciones"></video>
       <figcaption>Centro de Notificaciones</figcaption>
     </figure>
 <p class="body-text">Revisá cada aviso para consultar su contexto y usá la navegación del sistema para abrir el módulo relacionado. Los avisos disponibles dependen de la actividad y los permisos de tu cuenta.</p>
@@ -422,7 +425,7 @@
 <p class="page-sub">El panel de control de toda la academia</p>
 <span class="role-badge badge-directora">Solo Directora</span>
 <figure class="shot" data-demo-clip="configuracion">
-      <video class="demo-video" loop muted playsinline preload="none" aria-label="Recorrido en video: Configuración"></video>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/configuracion.jpg" aria-label="Pantalla de Configuración — Personal y Accesos"></video>
       <figcaption>Configuración — Personal y Accesos</figcaption>
     </figure>
 <table class="field-table">
@@ -478,7 +481,7 @@
     <svg aria-hidden="true"><use href="#icon-checklist"></use></svg><span>Asistencia</span>
   </button>
   <button class="mobile-tab" type="button" data-mobile-section="pagos">
-    <svg aria-hidden="true"><use href="#icon-wallet"></use></svg><span>Pagos</span>
+    <svg aria-hidden="true"><use href="#icon-wallet"></use></svg><span>Cobros</span>
   </button>
   <button class="mobile-tab" type="button" data-mobile-section="alumnos">
     <svg aria-hidden="true"><use href="#icon-users"></use></svg><span>Estudiantes</span>
@@ -487,47 +490,25 @@
     <svg aria-hidden="true"><use href="#icon-more"></use></svg><span>Más</span>
   </button>
 </nav>
-<section class="chat-widget" id="chatWidget" role="dialog" aria-label="Asistente virtual CREAR" aria-modal="false" hidden>
+<button class="tina-launcher" id="tinaLauncher" type="button" aria-label="Abrir el chat de ayuda con Tina" aria-controls="chatWidget" aria-expanded="false"><img src="assets/images/tina.png" alt=""></button>
+<section class="chat-widget" id="chatWidget" role="dialog" aria-label="Chat con Tina" aria-modal="false" hidden>
   <header class="chat-widget-header">
-    <div class="chat-widget-title">
-      <strong>Hablemos con Tina</strong>
-      <span>Ayuda para usar el manual</span>
-    </div>
-    <button class="chat-widget-close" id="chatWidgetClose" type="button" aria-label="Cerrar asistente">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
-    </button>
+    <span class="chat-head-avatar"><img id="chatHeadAvatar" alt=""></span>
+    <div class="chat-widget-title"><strong>Tina</strong><span class="chat-status"><i aria-hidden="true"></i>En línea</span></div>
+    <button class="chat-widget-close" id="chatWidgetClose" type="button" aria-label="Cerrar el chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg></button>
   </header>
   <div class="chat-widget-messages" id="chatWidgetMessages" aria-live="polite" aria-relevant="additions text">
-    <div class="chat-message assistant-message">
-      ¡Hola! Soy Tina, tu asistente virtual de CREAR. Puedo orientarte sobre las secciones y funciones que explica este manual. ¿Qué necesitás?
-    </div>
+    <div class="chat-row is-tina"><img class="chat-avatar" alt=""><div class="chat-message assistant-message">¡Hola! Soy Tina, tu asistente virtual de CREAR. Puedo orientarte sobre las secciones y funciones que explica este manual. ¿Qué necesitás? Podés preguntarme, por ejemplo: «¿cómo cobro una cuota?» o «¿cómo registro una licencia?».</div></div>
     <p class="chat-widget-privacy">No compartas contraseñas, datos médicos ni información personal.</p>
   </div>
-  <div class="chat-widget-error" id="chatWidgetError" role="alert" hidden>
-    <p id="chatWidgetErrorText"></p>
-    <button id="chatWidgetRetry" type="button">Reintentar</button>
-  </div>
+  <div class="chat-widget-error" id="chatWidgetError" role="alert" hidden><p id="chatWidgetErrorText"></p><button id="chatWidgetRetry" type="button">Reintentar</button></div>
   <form class="chat-widget-form" id="chatWidgetForm">
     <label class="visually-hidden" for="chatWidgetInput">Escribí tu consulta</label>
     <input id="chatWidgetInput" name="message" type="text" maxlength="1200" autocomplete="off" placeholder="Escribí tu consulta…" required>
-    <button id="chatWidgetSend" type="submit" aria-label="Enviar mensaje">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
-    </button>
+    <button id="chatWidgetSend" type="submit" aria-label="Enviar mensaje"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
   </form>
 </section>
-<aside class="tina-assistant" id="tinaAssistant" aria-label="Tina, guía del manual">
-  <button class="tina-avatar-button" id="tinaAvatarButton" type="button" aria-label="Escuchar a Tina">
-    <span class="tina-avatar chat-mascot" id="tinaAvatar" aria-hidden="true"></span>
-  </button>
-  <div class="tina-speech" id="tinaSpeechBubble" aria-live="polite">
-    <strong id="tinaGreeting">¡Hola, soy Tina!</strong>
-    <p id="tinaGuideText">¡Bienvenida al manual! Te voy contando qué podés encontrar en cada sección.</p>
-    <div class="tina-actions">
-      <button id="tinaSpeak" type="button" aria-pressed="false">Escuchar</button>
-      <button id="tinaAsk" type="button" aria-expanded="false" aria-controls="chatWidget">Preguntame</button>
-    </div>
-  </div>
-</aside>
-</main><script src="assets/vendor/lottie_light.min.js"></script><script src="js/script.js"></script>
+
+</main><script src="js/script.js"></script>
 </body>
 </html>

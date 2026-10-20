@@ -2,7 +2,6 @@ import { mkdir, mkdtemp, rm, stat } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { chromium } from "playwright";
-import { generateNarrations } from "./generate-narrations.mjs";
 
 const baseUrl = process.env.DEMO_URL;
 const email = process.env.DEMO_EMAIL;
@@ -394,7 +393,6 @@ async function recordPage(page, context, filename, viewport, flow) {
 try {
   await mkdir(temporaryDir, { recursive: true });
   await mkdir(outputDir, { recursive: true });
-  await generateNarrations();
 
   browser = await chromium.launch({ headless: true });
 

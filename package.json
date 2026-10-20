@@ -3,16 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "record:demo": "node tools/record-demo.mjs",
-    "narrate": "node tools/generate-narrations.mjs",
-    "narrate:tina": "node tools/generate-tina-audio.mjs"
+    "record:demo": "node tools/record-demo.mjs"
   },
   "devDependencies": {
     "playwright": "^1.56.1"
-  },
-  "dependencies": {
-    "@elevenlabs/elevenlabs-js": "^2.71.0",
-    "dotenv": "^18.0.6",
-    "lottie-web": "^5.13.0"
   }
 }
