@@ -52,8 +52,8 @@
   <div class="nav-section-label">General</div>
   <div class="nav-item" data-section="inicio-nav" onclick="showSection('inicio-nav')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-book"></use></svg><span>Cómo empezar</span></div>
   <div class="nav-item" data-section="dashboard" onclick="showSection('dashboard')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-chart"></use></svg><span>El Panel de Inicio</span></div>
-  <div class="nav-section-label">Alumnas</div>
-  <div class="nav-item" data-section="alumnos" onclick="showSection('alumnos')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-users"></use></svg><span>Estudiantes</span></div>
+  <div class="nav-section-label">Estudiantes</div>
+  <div class="nav-item" data-section="alumnos" onclick="showSection('alumnos')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-users"></use></svg><span>Gestión de estudiantes</span></div>
   <div class="nav-item" data-section="ficha-medica" onclick="showSection('ficha-medica')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-id"></use></svg><span>Ficha Médica</span></div>
   <div class="nav-section-label">Docentes</div>
   <div class="nav-item" data-section="profesores" onclick="showSection('profesores')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-teacher"></use></svg><span>Profesores</span></div>
@@ -120,7 +120,7 @@
 <h2 class="home-label">Tareas frecuentes</h2>
 <div class="task-grid">
   <button class="task" type="button" onclick="showSection('pagos')"><span class="task-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-wallet"></use></svg></span><span class="task-txt"><strong>Cobrar una cuota</strong><small>Efectivo, transferencia o Mercado Pago</small></span><span class="task-go" aria-hidden="true">›</span></button>
-  <button class="task" type="button" onclick="showSection('alumnos')"><span class="task-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-users"></use></svg></span><span class="task-txt"><strong>Dar de alta una alumna</strong><small>Datos personales, tutor y ficha</small></span><span class="task-go" aria-hidden="true">›</span></button>
+  <button class="task" type="button" onclick="showSection('alumnos')"><span class="task-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-users"></use></svg></span><span class="task-txt"><strong>Dar de alta una estudiante</strong><small>Datos personales, tutor y ficha</small></span><span class="task-go" aria-hidden="true">›</span></button>
   <button class="task" type="button" onclick="showSection('asistencia')"><span class="task-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-checklist"></use></svg></span><span class="task-txt"><strong>Tomar asistencia</strong><small>Presentes, ausentes y justificadas</small></span><span class="task-go" aria-hidden="true">›</span></button>
   <button class="task" type="button" onclick="showSection('sueldos')"><span class="task-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-money"></use></svg></span><span class="task-txt"><strong>Pagar un sueldo</strong><small>Liquidación mensual de profesoras</small></span><span class="task-go" aria-hidden="true">›</span></button>
   <button class="task" type="button" onclick="showSection('licencias')"><span class="task-ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-calendar-off"></use></svg></span><span class="task-txt"><strong>Marcar una licencia</strong><small>Ausencias y suplencias</small></span><span class="task-go" aria-hidden="true">›</span></button>
@@ -129,7 +129,7 @@
 <h2 class="home-label">Quién usa qué</h2>
 <div class="role-list">
   <button class="role-row" type="button" onclick="showSection('inicio-nav')"><strong>Directora</strong><span>Acceso completo: configuración, sueldos y reportes</span><i aria-hidden="true">›</i></button>
-  <button class="role-row" type="button" onclick="showSection('inicio-nav')"><strong>Secretaria</strong><span>Gestión diaria: alumnas, inscripciones, cobros y asistencia</span><i aria-hidden="true">›</i></button>
+  <button class="role-row" type="button" onclick="showSection('inicio-nav')"><strong>Secretaria</strong><span>Gestión diaria: estudiantes, inscripciones, cobros y asistencia</span><i aria-hidden="true">›</i></button>
   <button class="role-row" type="button" onclick="showSection('inicio-nav')"><strong>Profesora</strong><span>Su ficha, asistencia de sus comisiones y notas</span><i aria-hidden="true">›</i></button>
 </div>
 </div>
@@ -168,7 +168,7 @@
 <h1 class="page-title">El Panel de Inicio</h1>
 <p class="page-sub">Tu resumen del día apenas entrás al sistema</p>
 <span class="role-badge badge-todos">Todos los roles</span>
-<p class="body-text">Al iniciar sesión, ves un resumen general: cuántas alumnas hay activas, inscripciones del mes, cuotas vencidas que necesitan seguimiento, y lo cobrado hasta el momento.</p>
+<p class="body-text">Al iniciar sesión, ves un resumen general: cuántas estudiantes hay activas, inscripciones del mes, cuotas vencidas que necesitan seguimiento, y lo cobrado hasta el momento.</p>
 <figure class="shot" data-demo-clip="inicio">
       <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/inicio.jpg" aria-label="Pantalla de Inicio — vista general"></video>
       <figcaption>Inicio — vista general</figcaption>
@@ -177,39 +177,39 @@
 <p class="body-text">El sistema usa el color a propósito: las tarjetas blancas son solo información (no requieren nada de vos). Si una tarjeta aparece en <strong style="color:#D70015">rojo</strong>, <strong style="color:#B25000">amarillo</strong> o algún otro color de alerta, significa que ese dato necesita tu atención.</p>
 <div class="callout callout-tip">
       <div class="callout-title">Accesos rápidos</div>
-      <div class="callout-body">Desde Inicio también podés crear una alumna nueva o una inscripción sin tener que ir al módulo correspondiente — los botones están arriba a la derecha.</div>
+      <div class="callout-body">Desde Inicio también podés crear una estudiante nueva o una inscripción sin tener que ir al módulo correspondiente — los botones están arriba a la derecha.</div>
     </div>
 </div>
 <div class="section" id="sec-alumnos">
-<h1 class="page-title">Estudiantes</h1>
-<p class="page-sub">Alta, edición y ficha completa de cada alumna</p>
+<h1 class="page-title">Gestión de Estudiantes</h1>
+<p class="page-sub">Alta, edición y ficha completa de cada estudiante</p>
 <span class="role-badge badge-secretaria">Directora y Secretaria</span>
-<h2 class="subhead">Cargar una alumna nueva</h2>
-<ol class="steps"><li>Andá a <strong>Alumnos</strong> en el menú lateral.</li>
-<li>Tocá <strong>+ Nuevo alumno</strong>, arriba a la derecha.</li>
+<h2 class="subhead">Cargar una estudiante nueva</h2>
+<ol class="steps"><li>Andá a <strong>Estudiantes</strong> en el menú lateral.</li>
+<li>Tocá <strong>+ Agregar estudiante</strong>, arriba a la derecha.</li>
 <li>Completá los datos obligatorios (marcados con *): nombre, apellido, DNI, fecha de nacimiento, teléfono, email, adulto responsable.</li>
 <li>Si tiene hermanas ya inscriptas, buscalas en <em>Grupo familiar</em> para aplicar el 10% de descuento automáticamente.</li>
-<li>Tocá <strong>Guardar alumno</strong>.</li></ol>
+<li>Tocá <strong>Guardar estudiante</strong>.</li></ol>
 <figure class="shot" data-demo-clip="alta-estudiante">
-      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/alta-estudiante.jpg" aria-label="Pantalla de Modal Nuevo Alumno"></video>
-      <figcaption>Modal Nuevo Alumno</figcaption>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/alta-estudiante.jpg" aria-label="Pantalla de Modal Agregar estudiante"></video>
+      <figcaption>Modal Agregar estudiante</figcaption>
     </figure>
 <div class="callout callout-warn">
       <div class="callout-title">DNI duplicado</div>
-      <div class="callout-body">Si el sistema te avisa que el DNI ya existe, revisá bien antes de continuar — puede que la alumna ya esté cargada de una inscripción anterior.</div>
+      <div class="callout-body">Si el sistema te avisa que el DNI ya existe, revisá bien antes de continuar — puede que la estudiante ya esté cargada de una inscripción anterior.</div>
     </div>
-<h2 class="subhead">Ver y buscar alumnas</h2>
+<h2 class="subhead">Ver y buscar estudiantes</h2>
 <p class="body-text">La tabla principal te deja buscar por nombre o DNI, y filtrar por grupo o estado (activas/inactivas). Cada fila tiene 3 acciones: <strong>Ver Ficha</strong> (toda la información en detalle), <strong>Modificar</strong> (edición rápida) y <strong>Dar de baja</strong> (baja lógica, nunca se borra el historial).</p>
 <figure class="shot" data-demo-clip="estudiantes">
-      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/estudiantes.jpg" aria-label="Pantalla de Listado de Alumnas"></video>
-      <figcaption>Listado de Alumnas</figcaption>
+      <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/estudiantes.jpg" aria-label="Pantalla de Listado de Estudiantes"></video>
+      <figcaption>Listado de Estudiantes</figcaption>
     </figure>
 </div>
 <div class="section" id="sec-ficha-medica">
 <h1 class="page-title">Ficha Médica</h1>
 <p class="page-sub">Datos de salud a mano ante cualquier emergencia</p>
 <span class="role-badge badge-secretaria">Directora y Secretaria</span>
-<ol class="steps"><li>Desde Alumnos, tocá <strong>Ver Ficha</strong> en la fila de la alumna.</li>
+<ol class="steps"><li>Desde Estudiantes, tocá <strong>Ver Ficha</strong> en la fila de la estudiante.</li>
 <li>Andá a la tab <strong>Ficha Médica</strong>.</li>
 <li>Si es la primera vez, vas a ver el botón <strong>+ Agregar Ficha Médica</strong> — tocalo para cargar los datos.</li>
 <li>Completá grupo sanguíneo, alergias, medicación, obra social, vencimiento del apto físico y contacto de emergencia.</li></ol>
@@ -219,7 +219,7 @@
     </figure>
 <div class="callout callout-warn">
       <div class="callout-title">Apto físico por vencer</div>
-      <div class="callout-body">El sistema te avisa automáticamente cuando el apto físico de una alumna está por vencer, con una alerta amarilla arriba de todo en su ficha.</div>
+      <div class="callout-body">El sistema te avisa automáticamente cuando el apto físico de una estudiante está por vencer, con una alerta amarilla arriba de todo en su ficha.</div>
     </div>
 </div>
 <div class="section" id="sec-profesores">
@@ -265,7 +265,7 @@
 <h1 class="page-title">Clases y Comisiones</h1>
 <p class="page-sub">La oferta académica de la academia</p>
 <span class="role-badge badge-secretaria">Directora y Secretaria</span>
-<p class="body-text">Cada comisión combina una disciplina, un horario, una sala y una profesora. El cupo máximo institucional es de <strong>25 alumnas por comisión</strong>.</p>
+<p class="body-text">Cada comisión combina una disciplina, un horario, una sala y una profesora. El cupo máximo institucional es de <strong>25 estudiantes por comisión</strong>.</p>
 <figure class="shot" data-demo-clip="clases">
       <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/clases.jpg" aria-label="Pantalla de Clases y Comisiones"></video>
       <figcaption>Clases y Comisiones</figcaption>
@@ -278,7 +278,7 @@
 <tr><td style="color:#D70015">Rojo + etiqueta "Cupo lleno"</td><td>Comisión completa — las nuevas inscripciones van a Lista de Espera</td></tr>
 </table>
 <h2 class="subhead">Ver el detalle de una comisión</h2>
-<p class="body-text">Tocá el nombre de cualquier comisión para ver un resumen completo: cuántas alumnas están inscriptas, el % de asistencia promedio, lo que factura por mes, y el listado completo de alumnas con su estado de pago.</p>
+<p class="body-text">Tocá el nombre de cualquier comisión para ver un resumen completo: cuántas estudiantes están inscriptas, el % de asistencia promedio, lo que factura por mes, y el listado completo de estudiantes con su estado de pago.</p>
 <figure class="shot" data-demo-clip="clases">
       <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/clases-2.jpg" aria-label="Pantalla de Detalle de Comisión"></video>
       <figcaption>Detalle de Comisión</figcaption>
@@ -286,10 +286,10 @@
 </div>
 <div class="section" id="sec-inscripciones">
 <h1 class="page-title">Inscripciones</h1>
-<p class="page-sub">Anotar alumnas ya cargadas a una comisión</p>
+<p class="page-sub">Anotar estudiantes ya cargadas a una comisión</p>
 <span class="role-badge badge-secretaria">Directora y Secretaria</span>
 <ol class="steps"><li>Tocá <strong>+ Nueva inscripción</strong>.</li>
-<li>Elegí la alumna (ya tiene que estar cargada en Alumnos).</li>
+<li>Elegí la estudiante (ya tiene que estar cargada en Estudiantes).</li>
 <li>Elegí la comisión.</li>
 <li>Si hay cupo, la inscripción queda <strong>Confirmada</strong>.</li>
 <li>Si no hay cupo, el sistema te ofrece anotarla en <strong>Lista de Espera</strong> — se le avisa por WhatsApp automáticamente apenas se libera un lugar.</li></ol>
@@ -299,7 +299,7 @@
     </figure>
 <div class="callout callout-info">
       <div class="callout-title">Estado "En espera"</div>
-      <div class="callout-body">Las alumnas en lista de espera aparecen mezcladas en la misma tabla, con la etiqueta violeta "En espera" — no hace falta ir a un lugar aparte a buscarlas.</div>
+      <div class="callout-body">Las estudiantes en lista de espera aparecen mezcladas en la misma tabla, con la etiqueta violeta "En espera" — no hace falta ir a un lugar aparte a buscarlas.</div>
     </div>
 </div>
 <div class="section" id="sec-asistencia">
@@ -314,19 +314,19 @@
       <figcaption>Control de Asistencia</figcaption>
     </figure>
 <div class="callout callout-warn">
-      <div class="callout-title">Alumna por debajo del 75%</div>
-      <div class="callout-body">Si una alumna cae debajo del 75% de asistencia mensual, aparece marcada en rojo con un botón para avisarle a la familia por WhatsApp directo desde esta pantalla.</div>
+      <div class="callout-title">Estudiante por debajo del 75%</div>
+      <div class="callout-body">Si una estudiante cae debajo del 75% de asistencia mensual, aparece marcada en rojo con un botón para avisarle a la familia por WhatsApp directo desde esta pantalla.</div>
     </div>
 </div>
 <div class="section" id="sec-pagos">
 <h1 class="page-title">Cobros y Cuotas</h1>
-<p class="page-sub">Cuenta corriente de cada alumna, por familia, por comisión o de vestuario</p>
+<p class="page-sub">Cuenta corriente de cada estudiante, por familia, por comisión o de vestuario</p>
 <span class="role-badge badge-secretaria">Directora y Secretaria</span>
 <p class="body-text">Cobros tiene cuatro pestañas: <strong>Por estudiante</strong>, <strong>Por grupo familiar</strong> (para ver y cobrar el total de hermanos juntos), <strong>Por comisión</strong> (el estado de una comisión entera) y <strong>Vestuario</strong> (cuenta corriente aparte para trajes del festival, que no son un cobro recurrente).</p>
 <h2 class="subhead">Tres formas de cobrar</h2>
 <ol class="steps"><li><strong>Efectivo o transferencia:</strong> completá monto y método en el panel de la derecha y tocá <strong>Confirmar Pago</strong>.</li>
 <li><strong>Cobro electrónico (Mercado Pago):</strong> generá un enlace de pago por la cuota y mandáselo a la familia por WhatsApp o copiando el link. El pago se acredita solo — no hace falta cargar nada cuando Mercado Pago avisa que se cobró.</li>
-<li><strong>Vestuario:</strong> se cobra desde su propia pestaña, contra la cuenta corriente de esa alumna.</li></ol>
+<li><strong>Vestuario:</strong> se cobra desde su propia pestaña, contra la cuenta corriente de esa estudiante.</li></ol>
 <figure class="shot" data-demo-clip="pagos">
       <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/pagos.jpg" aria-label="Pantalla de Cobros y Cuotas"></video>
       <figcaption>Cobros y Cuotas</figcaption>
@@ -363,7 +363,7 @@
 <span class="role-badge badge-profesora">Todos los roles</span>
 <p class="body-text">Solo se cargan notas para las disciplinas de Profesorado (Danza Clásica, Jazz, Zapateo Americano, Danza Española). Las clases recreativas no tienen evaluación formal.</p>
 <ol class="steps"><li>Elegí el examen arriba de todo — tiene que existir como evento tipo <em>Examen</em> en Eventos primero.</li>
-<li>La profesora carga la nota de cada alumna en Expresión, Ritmo y Técnica (escala 1 a 10).</li>
+<li>La profesora carga la nota de cada estudiante en Expresión, Ritmo y Técnica (escala 1 a 10).</li>
 <li>El promedio se calcula solo.</li>
 <li>Una vez cargada, solo la <strong>Directora</strong> puede tocar <strong>Corregir Nota</strong> — y únicamente una vez: después de esa corrección la nota queda cerrada, con registro de quién corrigió y cuándo.</li></ol>
 <figure class="shot" data-demo-clip="evaluaciones">
@@ -382,7 +382,7 @@
       <figcaption>Eventos — Cronograma del Show</figcaption>
     </figure>
 <h2 class="subhead">Cronograma por tandas</h2>
-<p class="body-text">Cada tanda tiene un profesor responsable de backstage y su lista de coreografías, con el número de alumnas de cada una. Tocá <strong>Ver lista de alumnas</strong> para ver quién participa en cada coreografía puntual.</p>
+<p class="body-text">Cada tanda tiene un profesor responsable de backstage y su lista de coreografías, con el número de estudiantes de cada una. Tocá <strong>Ver lista de estudiantes</strong> para ver quién participa en cada coreografía puntual.</p>
 <div class="callout callout-role">
       <div class="callout-title">Los exámenes nacen acá</div>
       <div class="callout-body">Un evento tipo <strong>Examen</strong> es lo que después aparece para calificar en Evaluaciones — si no creaste el evento, la profesora no va a tener de dónde elegir el examen para cargar notas.</div>
@@ -408,7 +408,7 @@
       <video class="demo-video" loop muted playsinline preload="none" poster="assets/images/capturas/reportes.jpg" aria-label="Pantalla de Reportes y Estadísticas"></video>
       <figcaption>Reportes y Estadísticas</figcaption>
     </figure>
-<p class="body-text">Dos reportes principales: <strong>morosidad por alumna</strong> (quiénes tienen cuotas vencidas acumuladas) y <strong>ocupación de comisiones</strong> (qué tan llenas están, para decidir si conviene fusionar grupos chicos). Podés exportar todo a Excel o PDF con el botón de arriba.</p>
+<p class="body-text">Dos reportes principales: <strong>morosidad por estudiante</strong> (quiénes tienen cuotas vencidas acumuladas) y <strong>ocupación de comisiones</strong> (qué tan llenas están, para decidir si conviene fusionar grupos chicos). Podés exportar todo a Excel o PDF con el botón de arriba.</p>
 </div>
 <div class="section" id="sec-notificaciones">
 <h1 class="page-title">Notificaciones</h1>
@@ -447,12 +447,12 @@
 <p class="page-sub">Dudas comunes del uso diario</p>
 <div class="faq-list">
   <details class="faq-item">
-    <summary class="faq-q">¿Cómo doy de baja a una alumna?</summary>
-    <p class="faq-a">Desde Alumnos, tocá "Dar de baja" en su fila. Es una baja lógica — el historial de la alumna se conserva, no se borra nada.</p>
+    <summary class="faq-q">¿Cómo doy de baja a una estudiante?</summary>
+    <p class="faq-a">Desde Estudiantes, tocá "Dar de baja" en su fila. Es una baja lógica — el historial de la estudiante se conserva, no se borra nada.</p>
   </details>
   <details class="faq-item">
-    <summary class="faq-q">¿Puedo recuperar una alumna dada de baja?</summary>
-    <p class="faq-a">Sí, filtrá por Estado: Inactivos en la tabla de Alumnos y reactivala desde ahí.</p>
+    <summary class="faq-q">¿Puedo recuperar una estudiante dada de baja?</summary>
+    <p class="faq-a">Sí, filtrá por Estado: Inactivos en la tabla de Estudiantes y reactivala desde ahí.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-q">¿Qué pasa si una profesora falta sin avisar con anticipación?</summary>
