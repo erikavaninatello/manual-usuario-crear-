@@ -14,6 +14,7 @@ const mobile = { name: "celular", width: 390, height: 844 };
 const byName = (re, role = "button") => (page) => page.getByRole(role, { name: re }).filter({ visible: true }).first();
 const byText = (re) => (page) => page.getByText(re).filter({ visible: true }).first();
 const rowMenu = (page) => page.getByRole("button", { name: /^(opciones|acciones)/i }).filter({ visible: true }).first();
+const dialogField = (page, re) => page.locator('[data-capa-dialogo="true"], [role="dialog"]').last().getByLabel(re).first();
 const closeWithEsc = { target: (page) => page.locator("body"), action: "press-escape", optional: true };
 const flows = [
   {
@@ -49,11 +50,11 @@ const flows = [
     path: "/alumnos",
     steps: [
       { target: byName(/agregar estudiante/i), action: "click" },
-      { target: (page) => page.getByLabel(/^nombre/i).filter({ visible: true }).first(), action: "type", text: "María" },
-      { target: (page) => page.getByLabel(/^apellido/i).filter({ visible: true }).first(), action: "type", text: "Pérez" },
-      { target: (page) => page.getByLabel(/dni/i).filter({ visible: true }).first(), action: "type", text: "40123456", optional: true },
-      { target: (page) => page.getByLabel(/fecha de nacimiento/i).filter({ visible: true }).first(), action: "highlight", optional: true },
-      { target: (page) => page.getByLabel(/adulto responsable/i).filter({ visible: true }).first(), action: "type", text: "Laura Pérez", optional: true },
+      { target: (page) => dialogField(page, /^nombre/i), action: "type", text: "María" },
+      { target: (page) => dialogField(page, /^apellido/i), action: "type", text: "Pérez" },
+      { target: (page) => dialogField(page, /^dni/i), action: "type", text: "40123456", optional: true },
+      { target: (page) => dialogField(page, /fecha de nacimiento/i), action: "highlight", optional: true },
+      { target: (page) => dialogField(page, /adulto responsable/i), action: "type", text: "Laura Pérez", optional: true },
       { target: byText(/grupo familiar/i), action: "highlight", optional: true },
       { target: byName(/guardar ficha/i), action: "highlight", optional: true },
       closeWithEsc,
@@ -334,7 +335,7 @@ async function moveTo(page, target) {
   await page.waitForTimeout(350);
 }
 
-async function runSteps(page, steps = []) {
+async function runStepsInner(page, steps = []) {
   for (const step of steps) {
     const target = await step.target(page);
     if (!(await target.isVisible().catch(() => false))) {
@@ -393,6 +394,18 @@ async function runSteps(page, steps = []) {
     }
 
     await page.waitForTimeout(step.pause ?? 850);
+  }
+}
+
+// Cada paso es tolerante: si un botón no aparece o algo lo tapa, avisa y sigue con el siguiente.
+async function runSteps(page, steps = []) {
+  for (const step of steps) {
+    try {
+      await runStepsInner(page, [{ ...step, optional: true }]);
+    } catch (error) {
+      console.warn(`  (paso salteado: ${step.action} — ${String(error.message).split("\n")[0]})`);
+      await page.keyboard.press("Escape").catch(() => {});
+    }
   }
 }
 
@@ -463,6 +476,7 @@ try {
       for (const flow of selectedFlows) {
         const context = await createRecordingContext(viewport, storageState, sessionStorageState);
         const page = await context.newPage();
+        try {
         await page.goto(new URL(flow.path, baseUrl).href, { waitUntil: "domcontentloaded" });
         if (new URL(page.url()).pathname.endsWith("/login")) {
           throw new Error(`La demo rechazó la sesión al abrir "${flow.title}".`);
@@ -478,6 +492,10 @@ try {
           viewport,
           flow,
         );
+        } catch (error) {
+          console.warn(`NO SE PUDO grabar "${flow.title}" (${viewport.name}): ${String(error.message).split("\n")[0]}`);
+          await context.close().catch(() => {});
+        }
       }
     }
   }

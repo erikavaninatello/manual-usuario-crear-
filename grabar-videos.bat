@@ -15,5 +15,5 @@ echo.
 echo Grabando las pantallas. No hace falta tocar nada, puede tardar varios minutos...
 call npm run record:demo
 echo.
-echo Listo. Los videos quedaron en assets\videos
+echo Listo. Terminado. Revisa arriba si algun video dice NO SE PUDO. Videos en assets\videos
 pause
