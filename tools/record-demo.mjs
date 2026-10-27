@@ -148,7 +148,7 @@ const flows = [
     path: "/pagos",
     steps: [
       { target: byName(/^cuotas$/i, "tab"), action: "click", optional: true },
-      { target: byName(/^cobrar/i), action: "click" },
+      { target: (page) => page.getByRole("main").getByRole("button", { name: /^cobrar$/i }).filter({ visible: true }).first(), action: "click" },
       { target: byText(/cuotas a cobrar/i), action: "highlight", optional: true },
       { target: byText(/medio de pago/i), action: "highlight", optional: true },
       { target: byName(/transferencia/i), action: "click", optional: true },
