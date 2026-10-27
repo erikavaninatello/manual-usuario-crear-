@@ -9,209 +9,227 @@ const password = process.env.DEMO_PASSWORD;
 const outputDir = path.resolve(process.env.OUTPUT_DIR || "assets/videos");
 const desktop = { name: "escritorio", width: 1440, height: 1000 };
 const mobile = { name: "celular", width: 390, height: 844 };
+// Recorridos con los textos reales del sistema. Ningún recorrido guarda ni confirma datos:
+// se rellenan campos de prueba, se muestran paneles y se cierran con Escape.
+const byName = (re, role = "button") => (page) => page.getByRole(role, { name: re }).filter({ visible: true }).first();
+const byText = (re) => (page) => page.getByText(re).filter({ visible: true }).first();
+const rowMenu = (page) => page.getByRole("button", { name: /^(opciones|acciones)/i }).filter({ visible: true }).first();
+const closeWithEsc = { target: (page) => page.locator("body"), action: "press-escape", optional: true };
 const flows = [
   {
     id: "inicio",
-    title: "Panel de inicio",
+    title: "El Inicio del sistema",
     path: "/inicio",
     steps: [
-      { target: (page) => page.getByRole("link", { name: "Cobrar" }), action: "highlight" },
-      { target: (page) => page.getByRole("link", { name: "Tomar lista" }), action: "highlight" },
-      { target: (page) => page.getByRole("link", { name: "Inscribir" }), action: "highlight" },
+      { target: byName(/^cobrar/i, "link"), action: "highlight", optional: true },
+      { target: byName(/tomar lista/i, "link"), action: "highlight", optional: true },
+      { target: byName(/inscribir/i, "link"), action: "highlight", optional: true },
+      { target: byText(/cobrado en el mes/i), action: "highlight", optional: true },
+      { target: byText(/clases de hoy/i), action: "highlight", optional: true },
+      { target: byName(/cuotas vencidas/i, "tab"), action: "click", optional: true },
+      { target: byName(/apto f[ií]sico/i, "tab"), action: "click", optional: true },
+      { target: byName(/asistencia baja/i, "tab"), action: "click", optional: true },
     ],
   },
   {
     id: "estudiantes",
-    title: "Gestión y búsqueda de estudiantes",
+    title: "Estudiantes: búsqueda y filtros",
     path: "/alumnos",
     steps: [
-      {
-        target: (page) => page.locator('input[placeholder*="Buscar por nombre o DNI"]').filter({ visible: true }).first(),
-        action: "search",
-      },
+      { target: (page) => page.locator('input[placeholder*="Buscar"]').filter({ visible: true }).first(), action: "search", text: "Agus" },
+      { target: byName(/ver \d+ de baja/i), action: "click", optional: true },
+      { target: byName(/ocultar las de baja/i), action: "click", optional: true },
+      { target: rowMenu, action: "click", optional: true },
+      closeWithEsc,
     ],
   },
   {
     id: "alta-estudiante",
-    title: "Alta de estudiante",
-    path: "/alumnos/nuevo",
+    title: "Agregar estudiante",
+    path: "/alumnos",
     steps: [
-      { target: (page) => page.getByLabel(/nombre/i).first(), action: "focus" },
-      { target: (page) => page.getByLabel(/apellido/i).first(), action: "focus" },
-      { target: (page) => page.getByLabel(/fecha de nacimiento/i).first(), action: "focus" },
-      { target: (page) => page.getByRole("button", { name: /guardar/i }).first(), action: "highlight" },
+      { target: byName(/agregar estudiante/i), action: "click" },
+      { target: (page) => page.getByLabel(/^nombre/i).filter({ visible: true }).first(), action: "type", text: "María" },
+      { target: (page) => page.getByLabel(/^apellido/i).filter({ visible: true }).first(), action: "type", text: "Pérez" },
+      { target: (page) => page.getByLabel(/dni/i).filter({ visible: true }).first(), action: "type", text: "40123456", optional: true },
+      { target: (page) => page.getByLabel(/fecha de nacimiento/i).filter({ visible: true }).first(), action: "highlight", optional: true },
+      { target: (page) => page.getByLabel(/adulto responsable/i).filter({ visible: true }).first(), action: "type", text: "Laura Pérez", optional: true },
+      { target: byText(/grupo familiar/i), action: "highlight", optional: true },
+      { target: byName(/guardar ficha/i), action: "highlight", optional: true },
+      closeWithEsc,
     ],
   },
   {
     id: "ficha-estudiante",
-    title: "Ficha 360 de estudiante",
+    title: "Ficha del estudiante",
     path: "/alumnos",
     steps: [
-      {
-        target: (page) => page.getByRole("button", { name: /acciones para/i }).filter({ visible: true }).first(),
-        action: "click",
-      },
-      {
-        target: (page) => page.getByRole("menuitem", { name: /ver ficha 360/i }),
-        action: "click",
-      },
-      { target: (page) => page.getByRole("tab", { name: "Datos" }), action: "click" },
-      { target: (page) => page.getByRole("tab", { name: "Salud" }), action: "click" },
-      { target: (page) => page.getByRole("tab", { name: "Pagos" }), action: "click" },
+      { target: rowMenu, action: "click" },
+      { target: byName(/ver ficha 360/i, "menuitem"), action: "click" },
+      { target: byName(/^datos$/i, "tab"), action: "click", optional: true },
+      { target: byName(/^familia$/i, "tab"), action: "click", optional: true },
+      { target: byName(/^salud$/i, "tab"), action: "click", optional: true },
+      { target: byName(/^documentos$/i, "tab"), action: "click", optional: true },
     ],
   },
   {
     id: "profesoras",
-    title: "Listado de profesoras",
+    title: "Profesoras",
     path: "/profesores",
     steps: [
-      {
-        target: (page) => page.getByRole("heading", { name: "Profesores" }),
-        action: "highlight",
-      },
-      {
-        target: (page) => page.getByRole("button", { name: /acciones para/i }).filter({ visible: true }).first(),
-        action: "highlight",
-      },
+      { target: byName(/nueva profesora/i), action: "highlight", optional: true },
+      { target: rowMenu, action: "click", optional: true },
+      closeWithEsc,
     ],
   },
   {
     id: "ficha-profesora",
-    title: "Ficha 360 de profesora",
+    title: "Ficha de la profesora",
     path: "/profesores",
     steps: [
-      {
-        target: (page) => firstProfessorWithClasses(page),
-        action: "click",
-      },
-      {
-        target: (page) => page.getByRole("menuitem", { name: /ver ficha 360/i }),
-        action: "click",
-      },
-      { target: (page) => page.getByRole("tab", { name: "Datos" }), action: "click" },
-      { target: (page) => page.getByRole("tab", { name: "Perfil" }), action: "click" },
-      { target: (page) => page.getByRole("tab", { name: "Licencias" }), action: "click" },
+      { target: rowMenu, action: "click" },
+      { target: byName(/ver ficha/i, "menuitem"), action: "click" },
+      { target: byName(/^datos$/i, "tab"), action: "click", optional: true },
+      { target: byName(/^perfil$/i, "tab"), action: "click", optional: true },
+      { target: byName(/^licencias$/i, "tab"), action: "click", optional: true },
     ],
   },
   {
     id: "licencias",
-    title: "Registro de licencias",
+    title: "Marcar licencia",
     path: "/profesores",
     steps: [
-      {
-        target: (page) => page.getByRole("button", { name: /acciones para/i }).filter({ visible: true }).first(),
-        action: "click",
-      },
-      {
-        target: (page) => page.getByRole("menuitem", { name: /ver ficha 360/i }),
-        action: "click",
-      },
-      { target: (page) => page.getByRole("tab", { name: "Licencias" }), action: "click" },
-      { target: (page) => page.getByRole("button", { name: /marcar licencia/i }), action: "click" },
-      {
-        target: (page) => page.getByLabel(/fecha inicio/i).first(),
-        action: "find-license-preview",
-      },
-      { target: (page) => page.getByRole("button", { name: "Viaje" }), action: "click" },
-      { target: (page) => page.getByText(/clases que quedan sin profesora/i), action: "highlight" },
-      { target: (page) => page.getByLabel(/buscar suplente/i), action: "click" },
+      { target: rowMenu, action: "click" },
+      { target: byName(/ver ficha/i, "menuitem"), action: "click" },
+      { target: byName(/^licencias$/i, "tab"), action: "click" },
+      { target: byName(/marcar licencia/i), action: "click" },
+      { target: (page) => page.getByLabel(/fecha (de )?inicio/i).filter({ visible: true }).first(), action: "highlight", optional: true },
+      { target: byText(/clases que quedan sin profesora/i), action: "highlight", optional: true },
+      closeWithEsc,
     ],
   },
   {
     id: "clases",
-    title: "Detalle de clase y comisión",
+    title: "Clases",
     path: "/clases",
     steps: [
-      {
-        target: (page) => page.getByRole("button", { name: /^Ver .+\(/ }).first(),
-        action: "click",
-      },
-      {
-        target: (page) => page.getByRole("dialog").getByText(/inscript|estudiantes/i).first(),
-        action: "highlight",
-      },
+      { target: byName(/nueva clase/i), action: "highlight", optional: true },
+      { target: byText(/lugares? libres?/i), action: "highlight", optional: true },
+      { target: byText(/para revisar/i), action: "highlight", optional: true },
+      { target: byName(/precios/i), action: "highlight", optional: true },
     ],
   },
   {
     id: "inscripciones",
     title: "Nueva inscripción",
-    path: "/inscripciones",
+    path: "/alumnos",
     steps: [
-      {
-        target: (page) => page.getByRole("button", { name: "Nueva inscripción" }),
-        action: "click",
-      },
-      {
-        target: (page) => page.getByRole("dialog").getByText(/estudiante|alumna/i).first(),
-        action: "highlight",
-      },
+      { target: byName(/^inscripciones$/i, "tab"), action: "click", optional: true },
+      { target: byName(/nueva inscripci[oó]n/i), action: "click" },
+      { target: (page) => page.getByRole("dialog").getByText(/estudiante/i).first(), action: "highlight", optional: true },
+      closeWithEsc,
     ],
   },
   {
     id: "asistencia",
-    title: "Toma de asistencia",
-    path: "/asistencia",
+    title: "Tomar lista",
+    path: "/clases",
     steps: [
-      {
-        target: (page) => page.getByRole("button", { name: /Elegí la clase/ }).filter({ visible: true }).first(),
-        action: "choose-first-class",
-      },
-      {
-        target: (page) => page.getByRole("switch").first(),
-        action: "highlight",
-        optional: true,
-      },
+      { target: byName(/^asistencia$/i, "tab"), action: "click" },
+      { target: (page) => page.locator('[role="combobox"], button[aria-haspopup="listbox"]').filter({ visible: true }).first(), action: "choose-first-class", optional: true },
+      { target: (page) => page.getByRole("switch").filter({ visible: true }).first(), action: "click", optional: true },
+      { target: byText(/presentes/i), action: "highlight", optional: true },
+      { target: byName(/guardar asistencia/i), action: "highlight", optional: true },
     ],
   },
   {
     id: "pagos",
-    title: "Consulta de cuotas y pagos",
+    title: "Cobros",
     path: "/pagos",
     steps: [
-      {
-        target: (page) => page.getByRole("tab", { name: "Cuotas" }),
-        action: "click",
-      },
-      {
-        target: (page) => page.getByRole("button").filter({ hasText: /Debe/ }).first(),
-        action: "highlight",
-      },
+      { target: byName(/^cuotas$/i, "tab"), action: "click", optional: true },
+      { target: byName(/^cobrar/i), action: "click" },
+      { target: byText(/cuotas a cobrar/i), action: "highlight", optional: true },
+      { target: byText(/medio de pago/i), action: "highlight", optional: true },
+      { target: byName(/transferencia/i), action: "click", optional: true },
+      { target: byName(/mercado pago/i), action: "click", optional: true },
+      closeWithEsc,
     ],
   },
-  { id: "sueldos", title: "Liquidación de sueldos", path: "/sueldos" },
-  { id: "evaluaciones", title: "Evaluaciones y notas", path: "/evaluaciones" },
+  {
+    id: "sueldos",
+    title: "Sueldos",
+    path: "/sueldos",
+    steps: [
+      { target: byName(/actualizar/i), action: "highlight", optional: true },
+      { target: byName(/ver su clase/i), action: "click", optional: true },
+      { target: byText(/a liquidar/i), action: "highlight", optional: true },
+    ],
+  },
+  {
+    id: "evaluaciones",
+    title: "Evaluaciones",
+    path: "/evaluaciones",
+    steps: [
+      { target: byName(/cambiar clases/i), action: "highlight", optional: true },
+      { target: byText(/t[eé]cnica/i), action: "highlight", optional: true },
+      { target: byName(/sin nota/i), action: "click", optional: true },
+      { target: byName(/^todas$/i), action: "click", optional: true },
+    ],
+  },
   {
     id: "eventos",
     title: "Eventos",
     path: "/eventos",
     steps: [
-      {
-        target: (page) => page.getByRole("button", { name: /festival|muestra|examen/i }).first(),
-        action: "highlight",
-        optional: true,
-      },
+      { target: byName(/nuevo evento/i), action: "highlight", optional: true },
+      { target: byName(/abrir el festival/i), action: "highlight", optional: true },
+      { target: byName(/ver los anteriores/i), action: "click", optional: true },
     ],
   },
-  { id: "calendario", title: "Calendario académico", path: "/calendario" },
-  { id: "reportes", title: "Reportes", path: "/reportes" },
+  {
+    id: "calendario",
+    title: "Calendario",
+    path: "/calendario",
+    steps: [
+      { target: byName(/^semana$/i), action: "click", optional: true },
+      { target: byName(/^d[ií]a$/i), action: "click", optional: true },
+      { target: byName(/^mes$/i), action: "click", optional: true },
+      { target: byName(/agregar evento/i), action: "highlight", optional: true },
+    ],
+  },
+  {
+    id: "reportes",
+    title: "Reportes",
+    path: "/reportes",
+    steps: [
+      { target: byName(/morosidad/i, "tab"), action: "click", optional: true },
+      { target: byName(/ocupaci[oó]n/i, "tab"), action: "click", optional: true },
+      { target: byName(/^asistencia$/i, "tab"), action: "click", optional: true },
+      { target: byName(/descargar/i), action: "highlight", optional: true },
+    ],
+  },
   {
     id: "configuracion",
     title: "Configuración",
     path: "/configuracion",
+    steps: [
+      { target: byName(/nuevo usuario/i), action: "highlight", optional: true },
+      { target: byName(/criterios/i, "tab"), action: "click", optional: true },
+      { target: byName(/aranceles/i, "tab"), action: "click", optional: true },
+      { target: byName(/instituci[oó]n/i, "tab"), action: "click", optional: true },
+    ],
   },
   {
     id: "notificaciones",
-    title: "Centro de notificaciones",
+    title: "Notificaciones",
     path: "/inicio",
     steps: [
-      {
-        target: (page) => page.getByRole("button", { name: /notificaciones/i }).first(),
-        action: "click",
-      },
-      {
-        target: (page) => page.getByRole("dialog", { name: /notificaciones/i }),
-        action: "highlight",
-      },
+      { target: byName(/notificaciones/i), action: "click" },
+      { target: byName(/sin leer/i), action: "click", optional: true },
+      { target: byName(/^todas$/i), action: "click", optional: true },
+      { target: byName(/marcar todas como le[ií]das/i), action: "highlight", optional: true },
+      closeWithEsc,
     ],
   },
 ];
@@ -323,14 +341,20 @@ async function runSteps(page, steps = []) {
       if (step.optional) continue;
       throw new Error(`No se encontró un control visible del recorrido: ${step.action}.`);
     }
-    await moveTo(page, target);
+    if (step.action !== "press-escape") await moveTo(page, target);
 
     if (step.action === "click" || step.action === "choose-first-class") {
       await target.click();
     } else if (step.action === "search") {
-      await target.fill("Agustina");
-      await page.waitForTimeout(900);
+      await target.click();
+      await target.pressSequentially(step.text || "Agus", { delay: 90 });
+      await page.waitForTimeout(1100);
       await target.fill("");
+    } else if (step.action === "type") {
+      await target.click();
+      await target.pressSequentially(step.text || "", { delay: 80 });
+    } else if (step.action === "press-escape") {
+      await page.keyboard.press("Escape");
     } else if (step.action === "focus") {
       await target.click();
     } else if (step.action === "find-license-preview") {

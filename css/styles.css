@@ -677,3 +677,8 @@ body.dark-theme .hh-art-oscuro { display: block; opacity: .85; }
 :root { --bg: #faf8fd; }
 body.dark-theme { --bg: #13111b; }
 h1.page-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -.01em; }
+
+/* Menú lateral al estilo del sistema CREAR: grupos General / Gestión / Más y sub-ítems con guía */
+.navigation .nav-sub{margin-left:22px;padding-left:12px;border-left:1px solid rgba(255,255,255,.18);border-radius:0 10px 10px 0;font-size:.92em}
+body:not(.dark-theme) .navigation .nav-sub{border-left-color:rgba(0,0,0,.12)}
+.navigation .nav-section-label{letter-spacing:.12em;text-transform:uppercase;font-size:.68rem}
