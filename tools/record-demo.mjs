@@ -134,10 +134,9 @@ const flows = [
   {
     id: "asistencia",
     title: "Tomar lista",
-    path: "/clases",
+    path: "/asistencia",
     steps: [
-      { target: byName(/^asistencia$/i, "tab"), action: "click" },
-      { target: (page) => page.locator('[role="combobox"], button[aria-haspopup="listbox"]').filter({ visible: true }).first(), action: "choose-first-class", optional: true },
+      { target: (page) => page.getByRole("button", { name: /eleg[ií] la clase/i }).filter({ visible: true }).first(), action: "choose-first-class" },
       { target: (page) => page.getByRole("switch").filter({ visible: true }).first(), action: "click", optional: true },
       { target: byText(/presentes/i), action: "highlight", optional: true },
       { target: byName(/guardar asistencia/i), action: "highlight", optional: true },
