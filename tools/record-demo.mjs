@@ -148,7 +148,7 @@ const flows = [
     path: "/pagos",
     steps: [
       { target: byName(/^cuotas$/i, "tab"), action: "click", optional: true },
-      { target: (page) => page.getByRole("main").getByRole("button", { name: /^cobrar$/i }).filter({ visible: true }).first(), action: "click" },
+      { target: (page) => page.getByRole("main").getByRole("button", { name: /^cobrar$/i }).filter({ visible: true }).first(), action: "click-js" },
       { target: byText(/cuotas a cobrar/i), action: "highlight", optional: true },
       { target: byText(/medio de pago/i), action: "highlight", optional: true },
       { target: byName(/transferencia/i), action: "click", optional: true },
@@ -343,8 +343,10 @@ async function runStepsInner(page, steps = []) {
     }
     if (step.action !== "press-escape") await moveTo(page, target);
 
-    if (step.action === "click" || step.action === "choose-first-class") {
-      await target.click();
+    if (step.action === "click-js") {
+      await target.evaluate((el) => el.click());
+    } else if (step.action === "click" || step.action === "choose-first-class") {
+      await target.click({ timeout: 8000 });
     } else if (step.action === "search") {
       await target.click();
       await target.pressSequentially(step.text || "Agus", { delay: 90 });
