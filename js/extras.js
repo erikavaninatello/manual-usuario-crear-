@@ -56,6 +56,7 @@
 
   function simHome() {
     cur = null;
+    const ps = $("#sec-practica"); if (ps) ps.classList.remove("jugando");
     const done = store.get("crear-sim") || {};
     simApp.innerHTML = '<div class="sim-grid">' + SIMS.map(s => {
       const r = done[s.id];
@@ -69,8 +70,9 @@
   function simStart(id) {
     const s = simById(id); if (!s) return;
     cur = { s, i: 0, errores: 0, pistas: 0, busy: false };
+    const ps = $("#sec-practica"); if (ps) ps.classList.add("jugando");
     simApp.innerHTML = `<div class="sim-stage">
-      <div class="sim-top"><button type="button" class="sim-link" data-act="back">← Todas las prácticas</button><div class="sim-dots" aria-hidden="true"></div></div>
+      <div class="sim-top"><button type="button" class="sim-link" data-act="back">← Todas las prácticas</button><button type="button" class="sim-full" data-act="full">⛶ Pantalla completa</button><div class="sim-dots" aria-hidden="true"></div></div>
       <div class="sim-task" aria-live="polite"><span class="sim-step-n"></span><p></p></div>
       <div class="sim-screen"><div class="sim-chrome" aria-hidden="true"><i></i><i></i><i></i><span>CREAR · Academia de danza</span></div>
         <div class="sim-view"><img alt="Pantalla del sistema CREAR para practicar" draggable="false"><div class="sim-hot" hidden></div><div class="sim-msg" role="status"></div></div></div>
@@ -133,7 +135,13 @@
       const t = ev.target.closest("[data-sim],[data-act],[data-go],.sim-view"); if (!t) return;
       if (t.dataset.sim) return simStart(t.dataset.sim);
       if (t.dataset.go) return showSection(t.dataset.go);
-      if (t.dataset.act === "back") return simHome();
+      if (t.dataset.act === "back") { if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); return simHome(); }
+      if (t.dataset.act === "full") {
+        const st = $(".sim-stage", simApp);
+        if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+        else if (st.requestFullscreen) st.requestFullscreen().catch(() => {});
+        return;
+      }
       if (!cur) return;
       if (t.dataset.act === "hint") {
         const p = cur.s.pasos[cur.i], hot = $(".sim-hot", simApp); cur.pistas++;
