@@ -464,6 +464,8 @@ const BASE_RESPUESTAS = [
     a: "El enlace de invitación te lo da la Directora cuando te da de alta. Sirve una sola vez y es válido por 72 horas: lo usás para elegir tu propia contraseña." },
   { go: "inicio-nav", k: [["atajo", "teclad", "tecla", "shortcut"]],
     a: "Atajos de teclado:\n• /: abre el buscador de estudiantes, clases y pantallas (no funciona mientras escribís en un campo).\n• Esc: cierra el panel o la ventana abiertos." },
+  { go: "practica", k: [["practic", "simulad", "ensay", "entren", "probar", "probalo"]], peso: 3,
+    a: "En Practicá (en el menú, grupo General) hay un simulador con pantallas reales: cobrar una cuota, tomar lista, agregar una estudiante y marcar una licencia. Tocás el botón correcto en cada paso y nada se guarda. ¡Probalo!" },
   { go: "dashboard", k: [["tarjet", "rojo", "amarill", "alerta", "panel", "resumen", "dashboard"]],
     a: "El Inicio del sistema resume el día: lo cobrado en el mes, las clases de hoy, los cumpleaños de la semana y lo pendiente (cuotas por vencer, cuotas vencidas, apto físico y asistencia baja). Arriba tenés los accesos Cobrar, Tomar lista, Inscribir y Agregar estudiante." },
   { go: "alumnos", k: [["carg", "alta", "agreg", "nuev", "crear", "sumar"], ["alumn", "estudiant"]], n: 2,

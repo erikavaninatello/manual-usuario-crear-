@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/extras.css">
 </head>
 <body>
 <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -52,6 +53,7 @@
   <div class="nav-section-label">General</div>
   <div class="nav-item" data-section="inicio-nav" onclick="showSection('inicio-nav')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-book"></use></svg><span>Ingresar al sistema</span></div>
   <div class="nav-item" data-section="dashboard" onclick="showSection('dashboard')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-house"></use></svg><span>El Inicio del sistema</span></div>
+  <div class="nav-item" data-section="practica" onclick="showSection('practica')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-medal"></use></svg><span>Practicá (simulador)</span></div>
   <div class="nav-section-label">Gestión</div>
   <div class="nav-item" data-section="alumnos" onclick="showSection('alumnos')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-users"></use></svg><span>Estudiantes</span></div>
   <div class="nav-item nav-sub" data-section="ficha-medica" onclick="showSection('ficha-medica')"><svg class="nav-icon" aria-hidden="true"><use href="#icon-id"></use></svg><span>Ficha del estudiante</span></div>
@@ -213,6 +215,7 @@
     </figure>
 <h2 class="subhead">Opciones de cada fila</h2>
 <p class="body-text">El botón de tres puntos (<strong>Opciones</strong>) tiene <strong>Ver ficha 360°</strong>, <strong>Editar</strong> y <strong>Dar de baja</strong>. La baja nunca borra el historial. Para ver las estudiantes de baja, tocá <strong>Ver 2 de baja</strong> arriba (y <strong>Ocultar las de baja</strong> para volver).</p>
+<button class="sim-cta" type="button" data-sim="alta">Probalo vos: practicá agregar una estudiante →</button>
 </div>
 <div class="section" id="sec-ficha-medica">
 <h1 class="page-title">Ficha del estudiante</h1>
@@ -268,6 +271,7 @@
       <div class="callout-title">Dónde se ve</div>
       <div class="callout-body">Las licencias aparecen en el <strong>Calendario</strong> con su propio color (<em>Licencia de profesor</em>), así sabés qué clases se ven afectadas.</div>
     </div>
+<button class="sim-cta" type="button" data-sim="licencia">Probalo vos: practicá marcar una licencia →</button>
 </div>
 <div class="section" id="sec-clases">
 <h1 class="page-title">Clases</h1>
@@ -333,6 +337,7 @@
       <div class="callout-body">La columna <strong>Asistencia mensual</strong> muestra el porcentaje de cada estudiante. Las que bajan del 75% aparecen en <strong>Asistencia baja</strong> del Inicio, para avisar a la familia.</div>
     </div>
 <p class="body-text">Con <strong>Excel</strong> o <strong>PDF</strong> descargás la asistencia del mes de esa clase.</p>
+<button class="sim-cta" type="button" data-sim="lista">Probalo vos: practicá tomar lista →</button>
 </div>
 <div class="section" id="sec-pagos">
 <h1 class="page-title">Cobros</h1>
@@ -358,6 +363,7 @@
       <div class="callout-title">Familias</div>
       <div class="callout-body">Si hay hermanas, aparecen juntas en una sola fila (por ejemplo, «Ailén, Bianca y Sofía Gómez») y se cobran en un único panel.</div>
     </div>
+<button class="sim-cta" type="button" data-sim="cobrar">Probalo vos: practicá cobrar una cuota →</button>
 </div>
 <div class="section" id="sec-sueldos">
 <h1 class="page-title">Sueldos</h1>
@@ -508,6 +514,13 @@
   </details>
 </div>
 </div>
+<div class="section" id="sec-practica">
+<h1 class="page-title">Practicá sin miedo</h1>
+<p class="page-sub">Un simulador con pantallas reales del sistema: nada de lo que toques acá se guarda</p>
+<span class="role-badge badge-todos">Todos los roles</span>
+<p class="body-text sim-lead">Elegí una tarea y hacela como si estuvieras en CREAR: tocá el botón correcto en cada pantalla. Si te trabás, podés pedir una pista. Al terminar ganás hasta tres estrellas.</p>
+<div id="simApp"></div>
+</div>
 <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
 <nav class="mobile-tabbar" aria-label="Navegación rápida">
   <button class="mobile-tab active" type="button" data-mobile-section="portada" aria-current="page">
@@ -545,6 +558,6 @@
   </form>
 </section>
 
-</main><script src="js/script.js"></script>
+</main><script src="js/script.js"></script><script src="js/extras.js"></script>
 </body>
 </html>
